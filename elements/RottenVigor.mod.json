@@ -1,0 +1,22 @@
+{
+  "_fv": 66,
+  "_type": "potioneffect",
+  "definition": {
+    "effectName": "Rotten Vigor",
+    "icon": "rotten_vigor",
+    "color": {
+      "value": -16751053,
+      "falpha": 0.0
+    },
+    "isInstant": false,
+    "mobEffectCategory": "NEUTRAL",
+    "renderStatusInInventory": true,
+    "renderStatusInHUD": true,
+    "onStarted": {
+      "name": "RottenVigorEffectStartedapplied"
+    },
+    "onExpired": {
+      "name": "RottenVigorEffectExpires"
+    }
+  }
+}

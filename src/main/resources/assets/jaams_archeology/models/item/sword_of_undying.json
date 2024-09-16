@@ -1,0 +1,20 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "jaams_archeology:item/sword_of_undying"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "custom_model_data": 0
+      },
+      "model": "jaams_archeology:item/modeldata/sword_of_undying_0"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1
+      },
+      "model": "jaams_archeology:item/modeldata/sword_of_undying_1"
+    }
+  ]
+}

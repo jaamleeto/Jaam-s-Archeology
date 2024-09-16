@@ -1,0 +1,21 @@
+{
+  "parent": "item/handheld",
+  "loader": "forge:separate_transforms",
+  "textures": {
+    "layer0": "jaams_archeology:item/sword_of_undying"
+  },
+  "base": {
+    "parent": "jaams_archeology:item/modeldata/sword_of_undying_1_handheld"
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "jaams_archeology:item/modeldata/sword_of_undying_1_gui"
+    },
+    "ground": {
+      "parent": "jaams_archeology:item/modeldata/sword_of_undying_1_gui"
+    },
+    "fixed": {
+      "parent": "jaams_archeology:item/modeldata/sword_of_undying_1_gui"
+    }
+  }
+}

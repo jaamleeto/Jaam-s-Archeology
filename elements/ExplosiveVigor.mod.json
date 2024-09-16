@@ -1,0 +1,22 @@
+{
+  "_fv": 66,
+  "_type": "potioneffect",
+  "definition": {
+    "effectName": "Explosive Vigor",
+    "icon": "explosive_vigor",
+    "color": {
+      "value": -6711040,
+      "falpha": 0.0
+    },
+    "isInstant": false,
+    "mobEffectCategory": "NEUTRAL",
+    "renderStatusInInventory": true,
+    "renderStatusInHUD": true,
+    "onStarted": {
+      "name": "ExplosiveVigorEffectStartedapplied"
+    },
+    "onExpired": {
+      "name": "ExplosiveVigorEffectExpires"
+    }
+  }
+}

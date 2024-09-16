@@ -1,0 +1,42 @@
+{
+  "_fv": 66,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Sword",
+    "renderType": 0,
+    "blockingRenderType": 0,
+    "texture": "broken_sword_fragment",
+    "customModelName": "Normal",
+    "blockingModelName": "Normal blocking",
+    "name": "Broken Sword Fragment",
+    "specialInformation": {
+      "fixedValue": []
+    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:Archeology"
+      }
+    ],
+    "efficiency": 4.0,
+    "attackSpeed": 1.8,
+    "enchantability": 10,
+    "damageVsEntity": 0.0,
+    "usageCount": 226,
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "repairItems": [
+      {
+        "value": "CUSTOM:BrokenSwordFragment"
+      }
+    ],
+    "immuneToFire": false,
+    "blockDropsTier": "STONE",
+    "blocksAffected": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onEntityHitWith": {
+      "name": "BrokenSwordFragmentLivingEntityIsHitWithTool"
+    }
+  }
+}

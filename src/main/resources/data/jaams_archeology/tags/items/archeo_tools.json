@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "jaams_archeology:magnifying_glass",
+    "jaams_archeology:archeo_pickaxe",
+    "jaams_archeology:archeo_trowel",
+    "jaams_archeology:archeo_hammer"
+  ]
+}

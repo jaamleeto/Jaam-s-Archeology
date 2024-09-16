@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "package": "net.jaams.jaamsarcheology.mixins",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "mixins.jaams_archeology.refmap.json",
+  "mixins": [
+    "ItemInHandRendererMixin",
+    "ModConfigMixin"
+  ],
+  "client": [],
+  "minVersion": "0.8"
+}

@@ -1,0 +1,22 @@
+{
+  "_fv": 66,
+  "_type": "potioneffect",
+  "definition": {
+    "effectName": "Pigman's Vigor",
+    "icon": "pigman_vigor",
+    "color": {
+      "value": -39424,
+      "falpha": 0.0
+    },
+    "isInstant": false,
+    "mobEffectCategory": "NEUTRAL",
+    "renderStatusInInventory": true,
+    "renderStatusInHUD": true,
+    "onStarted": {
+      "name": "PigmanVigorEffectStartedapplied"
+    },
+    "onExpired": {
+      "name": "PigmanVigorEffectExpires"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "_fv": 66,
+  "_type": "tab",
+  "definition": {
+    "name": "Jaam's Archeology",
+    "icon": {
+      "value": "CUSTOM:BrokenSwordFragment"
+    },
+    "showSearch": false
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "_fv": 66,
+  "_type": "potioneffect",
+  "definition": {
+    "effectName": "Skeletal Vigor",
+    "icon": "skeletal_vigor",
+    "color": {
+      "value": -3355444,
+      "falpha": 0.0
+    },
+    "isInstant": false,
+    "mobEffectCategory": "NEUTRAL",
+    "renderStatusInInventory": true,
+    "renderStatusInHUD": true,
+    "onStarted": {
+      "name": "SkeletalVigorEffectStartedapplied"
+    },
+    "onExpired": {
+      "name": "SkeletalVigorEffectExpires"
+    }
+  }
+}

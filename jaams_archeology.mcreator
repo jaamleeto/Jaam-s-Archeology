@@ -1,0 +1,2602 @@
+{
+  "mod_elements": [
+    {
+      "name": "MagnifyingGlass",
+      "type": "item",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "magnifying_glass",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/item/MagnifyingGlassItem.java",
+          "src/main/resources/assets/jaams_archeology/models/item/magnifying_glass.json"
+        ]
+      },
+      "path": "~/Tools"
+    },
+    {
+      "name": "ArcheoPickaxe",
+      "type": "tool",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "archeo_pickaxe",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/item/ArcheoPickaxeItem.java",
+          "src/main/resources/assets/jaams_archeology/models/item/archeo_pickaxe.json"
+        ]
+      },
+      "path": "~/Tools"
+    },
+    {
+      "name": "ArcheoTrowel",
+      "type": "tool",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "archeo_trowel",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/item/ArcheoTrowelItem.java",
+          "src/main/resources/assets/jaams_archeology/models/item/archeo_trowel.json"
+        ]
+      },
+      "path": "~/Tools"
+    },
+    {
+      "name": "ArcheoHammer",
+      "type": "tool",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "archeo_hammer",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/jaams_archeology/models/item/archeo_hammer.json",
+          "src/main/java/net/jaams/jaamsarcheology/item/ArcheoHammerItem.java"
+        ]
+      },
+      "path": "~/Tools"
+    },
+    {
+      "name": "Archeology",
+      "type": "tab",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "archeology",
+      "metadata": {
+        "files": []
+      }
+    },
+    {
+      "name": "PrimitiveSpear",
+      "type": "tool",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "primitive_spear",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/item/PrimitiveSpearItem.java",
+          "src/main/resources/assets/jaams_archeology/models/item/primitive_spear.json"
+        ]
+      },
+      "path": "~/Weapons"
+    },
+    {
+      "name": "SpearFragment",
+      "type": "item",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "spear_fragment",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/item/SpearFragmentItem.java",
+          "src/main/resources/assets/jaams_archeology/models/item/spear_fragment.json"
+        ]
+      },
+      "path": "~/Weapons"
+    },
+    {
+      "name": "SwordOfUndying",
+      "type": "tool",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "sword_of_undying",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/jaams_archeology/models/item/sword_of_undying.json",
+          "src/main/java/net/jaams/jaamsarcheology/item/SwordOfUndyingItem.java"
+        ]
+      },
+      "path": "~/Weapons"
+    },
+    {
+      "name": "PrimordialGold",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "primordial_gold",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/jaams_archeology/models/item/primordial_gold.json",
+          "src/main/java/net/jaams/jaamsarcheology/item/PrimordialGoldItem.java"
+        ]
+      },
+      "path": "~/Treasures"
+    },
+    {
+      "name": "PrimordialGoldFragment",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "primordial_gold_fragment",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/item/PrimordialGoldFragmentItem.java",
+          "src/main/resources/assets/jaams_archeology/models/item/primordial_gold_fragment.json"
+        ]
+      },
+      "path": "~/Treasures"
+    },
+    {
+      "name": "PetrifiedAmmonite",
+      "type": "item",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "petrified_ammonite",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/jaams_archeology/models/item/petrified_ammonite.json",
+          "src/main/java/net/jaams/jaamsarcheology/item/PetrifiedAmmoniteItem.java"
+        ]
+      },
+      "path": "~/Misc"
+    },
+    {
+      "name": "OssifiedAmmonite",
+      "type": "item",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "ossified_ammonite",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/jaams_archeology/models/item/ossified_ammonite.json",
+          "src/main/java/net/jaams/jaamsarcheology/item/OssifiedAmmoniteItem.java"
+        ]
+      },
+      "path": "~/Misc"
+    },
+    {
+      "name": "ShinyAmmonite",
+      "type": "item",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "shiny_ammonite",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/jaams_archeology/models/item/shiny_ammonite.json",
+          "src/main/java/net/jaams/jaamsarcheology/item/ShinyAmmoniteItem.java"
+        ]
+      },
+      "path": "~/Misc"
+    },
+    {
+      "name": "SpearProjectile",
+      "type": "projectile",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "spear_projectile",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/client/renderer/SpearProjectileRenderer.java",
+          "src/main/java/net/jaams/jaamsarcheology/entity/SpearProjectileEntity.java"
+        ]
+      },
+      "path": "~/Projectiles"
+    },
+    {
+      "name": "SpearFragmentProjectile",
+      "type": "projectile",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "spear_fragment_projectile",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/client/renderer/SpearFragmentProjectileRenderer.java",
+          "src/main/java/net/jaams/jaamsarcheology/entity/SpearFragmentProjectileEntity.java"
+        ]
+      },
+      "path": "~/Projectiles"
+    },
+    {
+      "name": "AmmoniteProjectile",
+      "type": "projectile",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "ammonite_projectile",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/entity/AmmoniteProjectileEntity.java",
+          "src/main/java/net/jaams/jaamsarcheology/client/renderer/AmmoniteProjectileRenderer.java"
+        ]
+      },
+      "path": "~/Projectiles"
+    },
+    {
+      "name": "Tooltips",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tooltips",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/procedures/TooltipsProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "tooltip",
+            "type": "tooltip"
+          }
+        ]
+      },
+      "path": "~/Tooltips"
+    },
+    {
+      "name": "SpearRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "spear_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/jaams_archeology/recipes/spear_recipe.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "PrimordialGoldIngotRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "primordial_gold_ingot_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/jaams_archeology/recipes/primordial_gold_ingot_recipe.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "MagnifyingGlassRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "magnifying_glass_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/jaams_archeology/recipes/magnifying_glass_recipe.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "ArcheoPickaxeRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "archeo_pickaxe_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/jaams_archeology/recipes/archeo_pickaxe_recipe.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "ArcheoTrowelRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "archeo_trowel_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/jaams_archeology/recipes/archeo_trowel_recipe.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "ArcheoHammerRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "archeo_hammer_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/jaams_archeology/recipes/archeo_hammer_recipe.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "ItemRandomizer",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "item_randomizer",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/ItemRandomizer.java"
+        ]
+      },
+      "path": "~/Events"
+    },
+    {
+      "name": "FovModifier",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "fov_modifier",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/FovModifier.java"
+        ]
+      },
+      "path": "~/Events"
+    },
+    {
+      "name": "OnItemUsing",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "on_item_using",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/procedures/OnItemUsingProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/Procedures"
+    },
+    {
+      "name": "OnItemStopUsing",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "on_item_stop_using",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/procedures/OnItemStopUsingProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/Procedures"
+    },
+    {
+      "name": "ZombieIdolGlobal",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "zombie_idol_global",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/procedures/ZombieIdolGlobalProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Idols Procedures/Zombie Idol"
+    },
+    {
+      "name": "ZombieSetTarget",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "zombie_set_target",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/procedures/ZombieSetTargetProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Idols Procedures/Zombie Idol"
+    },
+    {
+      "name": "SkeletonIdolGlobal",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "skeleton_idol_global",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/procedures/SkeletonIdolGlobalProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Idols Procedures/Skeleton Idol"
+    },
+    {
+      "name": "SkeletonSetTarget",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skeleton_set_target",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/procedures/SkeletonSetTargetProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Idols Procedures/Skeleton Idol"
+    },
+    {
+      "name": "PiglinIdolGlobal",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "piglin_idol_global",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/procedures/PiglinIdolGlobalProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Idols Procedures/Piglin Idol"
+    },
+    {
+      "name": "PiglinSetTarget",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "piglin_set_target",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/procedures/PiglinSetTargetProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Idols Procedures/Piglin Idol"
+    },
+    {
+      "name": "IllagerIdolGlobal",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "illager_idol_global",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/procedures/IllagerIdolGlobalProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Idols Procedures/Illager Idol"
+    },
+    {
+      "name": "IllagerSetTarget",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "illager_set_target",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/procedures/IllagerSetTargetProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Idols Procedures/Illager Idol"
+    },
+    {
+      "name": "CreeperIdolGlobal",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "creeper_idol_global",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/procedures/CreeperIdolGlobalProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Idols Procedures/Creeper Idol"
+    },
+    {
+      "name": "EndermanIdolGlobal",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "enderman_idol_global",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/procedures/EndermanIdolGlobalProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Idols Procedures/Enderman Idol"
+    },
+    {
+      "name": "SwordOfUndyingLivingEntityIsHitWithTool",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sword_of_undying_living_entity_is_hit_with_tool",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/procedures/SwordOfUndyingLivingEntityIsHitWithToolProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Weapons/Procedures"
+    },
+    {
+      "name": "SwordOfUndyingRightclicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "sword_of_undying_rightclicked",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/procedures/SwordOfUndyingRightclickedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Weapons/Procedures"
+    },
+    {
+      "name": "CameraShake",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "camera_shake",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/CameraShake.java"
+        ]
+      },
+      "path": "~/Events"
+    },
+    {
+      "name": "CriticalDetect",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "critical_detect",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/procedures/CriticalDetectProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "isvanillacritical",
+            "type": "logic"
+          }
+        ]
+      },
+      "path": "~/Procedures"
+    },
+    {
+      "name": "VariableBonus",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "variable_bonus",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/procedures/VariableBonusProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "amount",
+            "type": "number"
+          }
+        ]
+      },
+      "path": "~/Procedures"
+    },
+    {
+      "name": "BrokenSwordFragmentLivingEntityIsHitWithTool",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "broken_sword_fragment_living_entity_is_hit_with_tool",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/procedures/BrokenSwordFragmentLivingEntityIsHitWithToolProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Weapons/Procedures"
+    },
+    {
+      "name": "BrokenSwordFragment",
+      "type": "tool",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "broken_sword_fragment",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/item/BrokenSwordFragmentItem.java",
+          "src/main/resources/assets/jaams_archeology/models/item/broken_sword_fragment.json"
+        ]
+      },
+      "path": "~/Weapons"
+    },
+    {
+      "name": "OnPlayerTick",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "on_player_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/procedures/OnPlayerTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures"
+    },
+    {
+      "name": "CreeperSetTarget",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "creeper_set_target",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/procedures/CreeperSetTargetProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Idols Procedures/Creeper Idol"
+    },
+    {
+      "name": "SwordOfUndyingRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sword_of_undying_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/jaams_archeology/recipes/sword_of_undying_recipe.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "HandRenderHandler",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "hand_render_handler",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/HandRenderHandler.java"
+        ]
+      },
+      "path": "~/Events"
+    },
+    {
+      "name": "OnFinishedUsing",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "on_finished_using",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/procedures/OnFinishedUsingProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/Procedures"
+    },
+    {
+      "name": "ItemInInventoryTick",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "item_in_inventory_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/procedures/ItemInInventoryTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/Procedures"
+    },
+    {
+      "name": "MagnifyingGlassRecipe2",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "magnifying_glass_recipe_2",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/jaams_archeology/recipes/magnifying_glass_recipe_2.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "MusicDiscNameless",
+      "type": "musicdisc",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "music_disc_nameless",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/item/MusicDiscNamelessItem.java",
+          "src/main/resources/assets/jaams_archeology/models/item/music_disc_nameless.json"
+        ]
+      },
+      "path": "~/Misc"
+    },
+    {
+      "name": "DiscFragmentNameless",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "disc_fragment_nameless",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/item/DiscFragmentNamelessItem.java",
+          "src/main/resources/assets/jaams_archeology/models/item/disc_fragment_nameless.json"
+        ]
+      },
+      "path": "~/Misc"
+    },
+    {
+      "name": "MusicDiscNamelessRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "music_disc_nameless_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/jaams_archeology/recipes/music_disc_nameless_recipe.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "ItemInHandRenderer",
+      "type": "mixin",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "item_in_hand_renderer",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/mixins/ItemInHandRendererMixin.java"
+        ]
+      },
+      "path": "~/Mixins"
+    },
+    {
+      "name": "JaamsArcheologyClient",
+      "type": "config",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "jaams_archeology_client",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/configuration/JaamsArcheologyClientConfiguration.java"
+        ]
+      },
+      "path": "~/Config"
+    },
+    {
+      "name": "ExplosiveIdol",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "explosive_idol",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/item/ExplosiveIdolItem.java",
+          "src/main/resources/assets/jaams_archeology/models/item/explosive_idol.json"
+        ]
+      },
+      "path": "~/Idols"
+    },
+    {
+      "name": "StrangeIdol",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "strange_idol",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/jaams_archeology/models/item/strange_idol.json",
+          "src/main/java/net/jaams/jaamsarcheology/item/StrangeIdolItem.java"
+        ]
+      },
+      "path": "~/Idols"
+    },
+    {
+      "name": "PigmanIdol",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "pigman_idol",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/item/PigmanIdolItem.java",
+          "src/main/resources/assets/jaams_archeology/models/item/pigman_idol.json"
+        ]
+      },
+      "path": "~/Idols"
+    },
+    {
+      "name": "SkeletalIdol",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skeletal_idol",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/jaams_archeology/models/item/skeletal_idol.json",
+          "src/main/java/net/jaams/jaamsarcheology/item/SkeletalIdolItem.java"
+        ]
+      },
+      "path": "~/Idols"
+    },
+    {
+      "name": "RottenIdol",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rotten_idol",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/jaams_archeology/models/item/rotten_idol.json",
+          "src/main/java/net/jaams/jaamsarcheology/item/RottenIdolItem.java"
+        ]
+      },
+      "path": "~/Idols"
+    },
+    {
+      "name": "TraitorIdol",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "traitor_idol",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/jaams_archeology/models/item/traitor_idol.json",
+          "src/main/java/net/jaams/jaamsarcheology/item/TraitorIdolItem.java"
+        ]
+      },
+      "path": "~/Idols"
+    },
+    {
+      "name": "ExplosiveVigor",
+      "type": "potioneffect",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "explosive_vigor",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/potion/ExplosiveVigorMobEffect.java"
+        ]
+      },
+      "path": "~/Effects"
+    },
+    {
+      "name": "StrangeVigor",
+      "type": "potioneffect",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "strange_vigor",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/potion/StrangeVigorMobEffect.java"
+        ]
+      },
+      "path": "~/Effects"
+    },
+    {
+      "name": "PigmanVigor",
+      "type": "potioneffect",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "pigman_vigor",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/potion/PigmanVigorMobEffect.java"
+        ]
+      },
+      "path": "~/Effects"
+    },
+    {
+      "name": "SkeletalVigor",
+      "type": "potioneffect",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skeletal_vigor",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/potion/SkeletalVigorMobEffect.java"
+        ]
+      },
+      "path": "~/Effects"
+    },
+    {
+      "name": "RottenVigor",
+      "type": "potioneffect",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rotten_vigor",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/potion/RottenVigorMobEffect.java"
+        ]
+      },
+      "path": "~/Effects"
+    },
+    {
+      "name": "TraitorVigor",
+      "type": "potioneffect",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "traitor_vigor",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/potion/TraitorVigorMobEffect.java"
+        ]
+      },
+      "path": "~/Effects"
+    },
+    {
+      "name": "ExplosiveVigorEffectStartedapplied",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "explosive_vigor_effect_startedapplied",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/procedures/ExplosiveVigorEffectStartedappliedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Effects/Procedures"
+    },
+    {
+      "name": "ExplosiveVigorEffectExpires",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "explosive_vigor_effect_expires",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/procedures/ExplosiveVigorEffectExpiresProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Effects/Procedures"
+    },
+    {
+      "name": "StrangeVigorEffectStartedapplied",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "strange_vigor_effect_startedapplied",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/procedures/StrangeVigorEffectStartedappliedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Effects/Procedures"
+    },
+    {
+      "name": "StrangeVigorEffectExpires",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "strange_vigor_effect_expires",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/procedures/StrangeVigorEffectExpiresProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Effects/Procedures"
+    },
+    {
+      "name": "PigmanVigorEffectStartedapplied",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "pigman_vigor_effect_startedapplied",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/procedures/PigmanVigorEffectStartedappliedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Effects/Procedures"
+    },
+    {
+      "name": "PigmanVigorEffectExpires",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "pigman_vigor_effect_expires",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/procedures/PigmanVigorEffectExpiresProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Effects/Procedures"
+    },
+    {
+      "name": "SkeletalVigorEffectStartedapplied",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skeletal_vigor_effect_startedapplied",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/procedures/SkeletalVigorEffectStartedappliedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Effects/Procedures"
+    },
+    {
+      "name": "SkeletalVigorEffectExpires",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skeletal_vigor_effect_expires",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/procedures/SkeletalVigorEffectExpiresProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Effects/Procedures"
+    },
+    {
+      "name": "RottenVigorEffectStartedapplied",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rotten_vigor_effect_startedapplied",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/procedures/RottenVigorEffectStartedappliedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Effects/Procedures"
+    },
+    {
+      "name": "RottenVigorEffectExpires",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rotten_vigor_effect_expires",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/procedures/RottenVigorEffectExpiresProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Effects/Procedures"
+    },
+    {
+      "name": "TraitorVigorEffectStartedapplied",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "traitor_vigor_effect_startedapplied",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/procedures/TraitorVigorEffectStartedappliedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Effects/Procedures"
+    },
+    {
+      "name": "TraitorVigorEffectExpires",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "traitor_vigor_effect_expires",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/procedures/TraitorVigorEffectExpiresProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Effects/Procedures"
+    },
+    {
+      "name": "ExplosiveIdolRightclicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "explosive_idol_rightclicked",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/procedures/ExplosiveIdolRightclickedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Idols/Procedures"
+    },
+    {
+      "name": "StrangeIdolRightclicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "strange_idol_rightclicked",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/procedures/StrangeIdolRightclickedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Idols/Procedures"
+    },
+    {
+      "name": "PigmanIdolRightclicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "pigman_idol_rightclicked",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/procedures/PigmanIdolRightclickedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Idols/Procedures"
+    },
+    {
+      "name": "SkeletalIdolRightclicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skeletal_idol_rightclicked",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/procedures/SkeletalIdolRightclickedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Idols/Procedures"
+    },
+    {
+      "name": "RottenIdolRightclicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rotten_idol_rightclicked",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/procedures/RottenIdolRightclickedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Idols/Procedures"
+    },
+    {
+      "name": "TraitorIdolRightclicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "traitor_idol_rightclicked",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/procedures/TraitorIdolRightclickedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Idols/Procedures"
+    },
+    {
+      "name": "BrokenSwordFragmentDeflect",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "broken_sword_fragment_deflect",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/procedures/BrokenSwordFragmentDeflectProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "amount",
+            "type": "number"
+          }
+        ]
+      },
+      "path": "~/Procedures"
+    },
+    {
+      "name": "SOUDeadHandler",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "sou_dead_handler",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/SOUDeadHandler.java"
+        ]
+      },
+      "path": "~/Events"
+    },
+    {
+      "name": "IDyeableItem",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "i_dyeable_item",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/IDyeableItem.java"
+        ]
+      },
+      "path": "~/Events"
+    },
+    {
+      "name": "ColorRegister",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "color_register",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/ColorRegister.java"
+        ]
+      },
+      "path": "~/Events"
+    },
+    {
+      "name": "TotemAnimHandler",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "totem_anim_handler",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/procedures/TotemAnimHandlerProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Events"
+    },
+    {
+      "name": "JaamsArcheologyServer",
+      "type": "config",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "jaams_archeology_server",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/configuration/JaamsArcheologyServerConfiguration.java"
+        ]
+      },
+      "path": "~/Config"
+    },
+    {
+      "name": "DamageRenderer",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "damage_renderer",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/DamageRenderer.java"
+        ]
+      }
+    },
+    {
+      "name": "EndermanSetTarget",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "enderman_set_target",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/procedures/EndermanSetTargetProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Idols Procedures/Enderman Idol"
+    },
+    {
+      "name": "GlobalConfigManager",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "global_config_manager",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/GlobalConfigManager.java"
+        ]
+      }
+    },
+    {
+      "name": "ModConfig",
+      "type": "mixin",
+      "compiles": false,
+      "locked_code": true,
+      "registry_name": "mod_config",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/mixins/ModConfigMixin.java"
+        ]
+      }
+    }
+  ],
+  "variable_elements": [
+    {
+      "name": "Critical",
+      "type": "logic",
+      "scope": "player_lifetime",
+      "value": "false"
+    },
+    {
+      "name": "Amount",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "0"
+    },
+    {
+      "name": "Shake",
+      "type": "logic",
+      "scope": "player_lifetime",
+      "value": "false"
+    },
+    {
+      "name": "RunHit",
+      "type": "logic",
+      "scope": "player_lifetime",
+      "value": "false"
+    },
+    {
+      "name": "SOUTotem",
+      "type": "logic",
+      "scope": "player_lifetime",
+      "value": "false"
+    }
+  ],
+  "sound_elements": [
+    {
+      "name": "ammonite_fired",
+      "files": [
+        "ammonite_fired"
+      ],
+      "category": "player",
+      "subtitle": "Ammonite fired"
+    },
+    {
+      "name": "ammonite_breaks",
+      "files": [
+        "ammonite_breaks"
+      ],
+      "category": "ambient",
+      "subtitle": "Ammonite breaks"
+    },
+    {
+      "name": "primitive_spear_fired",
+      "files": [
+        "primitive_spear_fired"
+      ],
+      "category": "player",
+      "subtitle": "Primitive Spear fired"
+    },
+    {
+      "name": "primitive_spear_ground",
+      "files": [
+        "primitive_spear_ground"
+      ],
+      "category": "ambient",
+      "subtitle": "Primitive Spear hits"
+    },
+    {
+      "name": "primitive_spear_hit",
+      "files": [
+        "primitive_spear_hit"
+      ],
+      "category": "ambient",
+      "subtitle": "Primitive Spear stabs"
+    },
+    {
+      "name": "primitive_spear_return",
+      "files": [
+        "primitive_spear_return"
+      ],
+      "category": "ambient",
+      "subtitle": "Primitive Spear returns"
+    },
+    {
+      "name": "spear_fragment_fired",
+      "files": [
+        "spear_fragment_fired"
+      ],
+      "category": "player",
+      "subtitle": "Spear Fragment Fired"
+    },
+    {
+      "name": "spear_fragment_ground",
+      "files": [
+        "spear_fragment_ground"
+      ],
+      "category": "ambient",
+      "subtitle": "Spear Fragment hits"
+    },
+    {
+      "name": "spear_fragment_hit",
+      "files": [
+        "spear_fragment_hit"
+      ],
+      "category": "ambient",
+      "subtitle": "Spear Fragment stabs"
+    },
+    {
+      "name": "spear_of_longinus_ground",
+      "files": [
+        "spear_of_longinus_ground"
+      ],
+      "category": "ambient",
+      "subtitle": "Spear of Longinus vibrates"
+    },
+    {
+      "name": "spear_of_longinus_hit",
+      "files": [
+        "spear_of_longinus_hit"
+      ],
+      "category": "ambient",
+      "subtitle": "Spear of Longinus stabs"
+    },
+    {
+      "name": "spear_of_longinus_return",
+      "files": [
+        "spear_of_longinus_return"
+      ],
+      "category": "ambient",
+      "subtitle": "Spear of Longinus returns"
+    },
+    {
+      "name": "spear_of_longinus_throw",
+      "files": [
+        "spear_of_longinus_throw"
+      ],
+      "category": "player",
+      "subtitle": "Spear of Longinus clangs"
+    },
+    {
+      "name": "idol_breaks",
+      "files": [
+        "idol_breaks"
+      ],
+      "category": "player",
+      "subtitle": "Mud Idol breaks"
+    },
+    {
+      "name": "war_roar_axe_critical",
+      "files": [
+        "war_roar_axe_critical"
+      ],
+      "category": "player",
+      "subtitle": ""
+    },
+    {
+      "name": "explosive_idol_started",
+      "files": [
+        "explosive_idol_started"
+      ],
+      "category": "player",
+      "subtitle": ""
+    },
+    {
+      "name": "explosive_idol_ends",
+      "files": [
+        "explosive_idol_ends"
+      ],
+      "category": "player",
+      "subtitle": ""
+    },
+    {
+      "name": "pigman_idol_started",
+      "files": [
+        "pigman_idol_started"
+      ],
+      "category": "player",
+      "subtitle": ""
+    },
+    {
+      "name": "pigman_idol_ends",
+      "files": [
+        "pigman_idol_ends"
+      ],
+      "category": "player",
+      "subtitle": ""
+    },
+    {
+      "name": "rotten_idol_started",
+      "files": [
+        "rotten_idol_started"
+      ],
+      "category": "player",
+      "subtitle": ""
+    },
+    {
+      "name": "rotten_idol_ends",
+      "files": [
+        "rotten_idol_ends"
+      ],
+      "category": "player",
+      "subtitle": ""
+    },
+    {
+      "name": "skeletal_idol_started",
+      "files": [
+        "skeletal_idol_started"
+      ],
+      "category": "player",
+      "subtitle": ""
+    },
+    {
+      "name": "skeletal_idol_ends",
+      "files": [
+        "skeletal_idol_ends"
+      ],
+      "category": "player",
+      "subtitle": ""
+    },
+    {
+      "name": "strange_idol_started",
+      "files": [
+        "strange_idol_started"
+      ],
+      "category": "player",
+      "subtitle": ""
+    },
+    {
+      "name": "strange_idol_ends",
+      "files": [
+        "strange_idol_ends"
+      ],
+      "category": "player",
+      "subtitle": ""
+    },
+    {
+      "name": "traitor_idol_started",
+      "files": [
+        "traitor_idol_started"
+      ],
+      "category": "player",
+      "subtitle": ""
+    },
+    {
+      "name": "traitor_idol_ends",
+      "files": [
+        "traitor_idol_ends"
+      ],
+      "category": "player",
+      "subtitle": ""
+    }
+  ],
+  "tag_elements": {
+    "ITEMS:mod:ossified_ammonite_treasures": [
+      "Items.BONE",
+      "Items.GUNPOWDER"
+    ],
+    "ITEMS:mod:bones": [
+      "Items.BONE"
+    ],
+    "ITEMS:mod:two_handed_weapons": [
+      "CUSTOM:PrimitiveSpear",
+      "CUSTOM:SwordOfUndying"
+    ],
+    "ITEMS:mod:archeo_tools": [
+      "CUSTOM:MagnifyingGlass",
+      "CUSTOM:ArcheoPickaxe",
+      "CUSTOM:ArcheoTrowel",
+      "CUSTOM:ArcheoHammer"
+    ],
+    "ITEMS:mod:petrified_ammonite_treasures": [
+      "Items.BEETROOT_SEEDS",
+      "Items.ROTTEN_FLESH",
+      "Blocks.BROWN_MUSHROOM",
+      "Blocks.RED_MUSHROOM"
+    ],
+    "ITEMS:minecraft:music_discs": [
+      "~CUSTOM:MusicDiscNameless"
+    ],
+    "ITEMS:mod:ammonites": [
+      "CUSTOM:PetrifiedAmmonite",
+      "CUSTOM:OssifiedAmmonite",
+      "CUSTOM:ShinyAmmonite"
+    ],
+    "ITEMS:mod:shiny_ammonite_treasures": [
+      "CUSTOM:PrimordialGoldFragment",
+      "Items.GOLD_INGOT",
+      "Items.EMERALD"
+    ],
+    "ITEMS:mod:mud_idols": [
+      "CUSTOM:ExplosiveIdol",
+      "CUSTOM:StrangeIdol",
+      "CUSTOM:PigmanIdol",
+      "CUSTOM:SkeletalIdol",
+      "CUSTOM:RottenIdol",
+      "CUSTOM:TraitorIdol"
+    ]
+  },
+  "tab_element_order": {
+    "CUSTOM:Archeology": [
+      "MagnifyingGlass",
+      "ArcheoPickaxe",
+      "ArcheoTrowel",
+      "ArcheoHammer",
+      "PrimordialGold",
+      "PrimordialGoldFragment",
+      "PetrifiedAmmonite",
+      "OssifiedAmmonite",
+      "ShinyAmmonite",
+      "ExplosiveIdol",
+      "StrangeIdol",
+      "SkeletalIdol",
+      "PigmanIdol",
+      "RottenIdol",
+      "TraitorIdol",
+      "BrokenSwordFragment",
+      "SwordOfUndying",
+      "PrimitiveSpear",
+      "SpearFragment",
+      "MusicDiscNameless",
+      "DiscFragmentNameless"
+    ]
+  },
+  "language_map": {
+    "en_us": {
+      "translation.tooltip.waxed": "Waxed",
+      "subtitles.illager_idol_ends": "",
+      "item.jaams_archeology.broken_sword_fragment": "Broken Sword Fragment",
+      "subtitles.creeper_idol_started": "",
+      "item.jaams_archeology.spear_fragment": "Spear Fragment",
+      "subtitles.pigman_idol_started": "",
+      "item.jaams_archeology.archeo_trowel": "Archeo Trowel",
+      "subtitles.piglin_idol_ends": "",
+      "subtitles.piglin_idol_started": "",
+      "subtitles.primitive_spear_hit": "Primitive Spear stabs",
+      "subtitles.ammonite_fired": "Ammonite fired",
+      "subtitles.ammonite_breaks": "Ammonite breaks",
+      "config.jaams_archeology.jaams_archeology_config": "jaams_archeology_common",
+      "subtitles.skeleton_idol_started": "",
+      "subtitles.spear_fragment_hit": "Spear Fragment stabs",
+      "subtitles.rotten_idol_ends": "",
+      "item.jaams_archeology.traitor_idol": "Traitor\u0027s Idol",
+      "subtitles.primitive_spear_ground": "Primitive Spear hits",
+      "item.jaams_archeology.explosive_idol": "Explosive Idol",
+      "subtitles.strange_idol_ends": "",
+      "translation.tooltip.oxidized": "Oxidized",
+      "subtitles.spear_of_longinus_return": "Spear of Longinus returns",
+      "subtitles.skeletal_idol_ends": "",
+      "subtitles.enderman_idol_started": "",
+      "config.jaams_archeology.jaams_archeology_client": "jaams_archeology_client",
+      "effect.jaams_archeology.rotten_vigor": "Rotten Vigor",
+      "item.jaams_archeology.rotten_idol": "Rotten Idol",
+      "effect.jaams_archeology.explosive_vigor": "Explosive Vigor",
+      "subtitles.spear_of_longinus_throw": "Spear of Longinus clangs",
+      "effect.jaams_archeology.traitor_vigor": "Traitor\u0027s Vigor",
+      "translation.tooltip.exposed": "Exposed",
+      "subtitles.idol_breaks": "Mud Idol breaks",
+      "item_group.jaams_archeology.archeology": "Jaam\u0027s Archeology",
+      "item.jaams_archeology.archeo_pickaxe": "Archeo Pickaxe",
+      "subtitles.primitive_spear_return": "Primitive Spear returns",
+      "subtitles.illager_idol_started": "",
+      "subtitles.strange_idol_started": "",
+      "subtitles.skeletal_idol_started": "",
+      "subtitles.spear_fired": "Spear fired",
+      "item.jaams_archeology.music_disc_nameless.desc": "jaamleeto - Nameless",
+      "item.jaams_archeology.primitive_spear": "Primitive Spear",
+      "item.jaams_archeology.strange_idol": "Strange Idol",
+      "subtitles.war_roar_axe_critical": "",
+      "item.jaams_archeology.shiny_ammonite": "Shiny Ammonite",
+      "subtitles.primitive_spear_fired": "Primitive Spear fired",
+      "item.jaams_archeology.petrified_ammonite": "Petrified Ammonite",
+      "subtitles.explosive_idol_started": "",
+      "subtitles.zombie_idol_ends": "",
+      "item.jaams_archeology.skeletal_idol": "Skeletal Idol",
+      "subtitles.spear_of_longinus_hit": "Spear of Longinus stabs",
+      "item.jaams_archeology.primordial_gold_fragment": "Primordial Gold Fragment",
+      "translation.key.details": "§7§o+ [Shift] §7§oFor show details",
+      "subtitles.rotten_idol_started": "",
+      "item.jaams_archeology.sword_of_undying": "§eSword of Undying",
+      "subtitles.explosive_idol_ends": "",
+      "effect.jaams_archeology.pigman_vigor": "Pigman\u0027s Vigor",
+      "subtitles.spear_fragment_fired": "Spear Fragment Fired",
+      "subtitles.enderman_idol_ends": "",
+      "subtitles.traitor_idol_ends": "",
+      "item.jaams_archeology.pigman_idol": "Pigman\u0027s Idol",
+      "subtitles.pigman_idol_ends": "",
+      "effect.jaams_archeology.skeletal_vigor": "Skeletal Vigor",
+      "item.jaams_archeology.magnifying_glass": "Magnifying Glass",
+      "item.jaams_archeology.disc_fragment_nameless": "Disc Fragment",
+      "subtitles.zombie_idol_started": "",
+      "item.jaams_archeology.primordial_gold": "Primordial Gold",
+      "subtitles.creeper_idol_ends": "",
+      "translation.tooltip.weathered": "Weathered",
+      "translation.key.pico": "§8Skibidi fornite chamba.",
+      "item.jaams_archeology.archeo_hammer": "Archeo Hammer",
+      "item.jaams_archeology.ossified_ammonite": "Ossified Ammonite",
+      "subtitles.traitor_idol_started": "",
+      "effect.jaams_archeology.strange_vigor": "Strange Vigor",
+      "item.jaams_archeology.music_disc_nameless": "Music Disc",
+      "subtitles.spear_of_longinus_ground": "Spear of Longinus vibrates",
+      "subtitles.skeleton_idol_ends": "",
+      "subtitles.spear_fragment_ground": "Spear Fragment hits"
+    }
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": [
+      {
+        "name": "Weapons",
+        "children": [
+          {
+            "name": "Procedures",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "Treasures",
+        "children": []
+      },
+      {
+        "name": "Misc",
+        "children": []
+      },
+      {
+        "name": "Idols",
+        "children": [
+          {
+            "name": "Procedures",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "Tools",
+        "children": []
+      },
+      {
+        "name": "Totems",
+        "children": []
+      },
+      {
+        "name": "Effects",
+        "children": [
+          {
+            "name": "Procedures",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "Projectiles",
+        "children": []
+      },
+      {
+        "name": "Procedures",
+        "children": []
+      },
+      {
+        "name": "Config",
+        "children": []
+      },
+      {
+        "name": "Recipes",
+        "children": [
+          {
+            "name": "Bone Meal",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "Tags",
+        "children": []
+      },
+      {
+        "name": "Events",
+        "children": []
+      },
+      {
+        "name": "Loot Tables",
+        "children": []
+      },
+      {
+        "name": "Idols Procedures",
+        "children": [
+          {
+            "name": "Zombie Idol",
+            "children": []
+          },
+          {
+            "name": "Skeleton Idol",
+            "children": []
+          },
+          {
+            "name": "Illager Idol",
+            "children": []
+          },
+          {
+            "name": "Piglin Idol",
+            "children": []
+          },
+          {
+            "name": "Creeper Idol",
+            "children": []
+          },
+          {
+            "name": "Enderman Idol",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "Particles",
+        "children": []
+      },
+      {
+        "name": "Tooltips",
+        "children": []
+      },
+      {
+        "name": "Mixins",
+        "children": []
+      }
+    ]
+  },
+  "workspaceSettings": {
+    "modid": "jaams_archeology",
+    "modName": "Jaam\u0027s Archeology",
+    "version": "1.0.0",
+    "author": "Jaamleeto",
+    "websiteURL": "https://mcreator.net",
+    "license": "All Rights Reserved",
+    "serverSideOnly": false,
+    "modPicture": "jaams_archeology",
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [
+      "configured",
+      "catalogue",
+      "jei"
+    ],
+    "currentGenerator": "forge-1.20.1",
+    "credits": "Mcreator",
+    "modElementsPackage": "net.jaams.jaamsarcheology"
+  },
+  "mcreatorVersion": 202400232117
+}

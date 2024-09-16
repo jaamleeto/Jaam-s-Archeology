@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "spear",
+  "category": "equipment",
+  "pattern": [
+    "  a",
+    " b ",
+    "b  "
+  ],
+  "key": {
+    "a": {
+      "item": "jaams_archeology:spear_fragment"
+    },
+    "b": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "jaams_archeology:primitive_spear",
+    "count": 1
+  }
+}

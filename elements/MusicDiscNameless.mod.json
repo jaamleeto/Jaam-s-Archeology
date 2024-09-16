@@ -1,0 +1,26 @@
+{
+  "_fv": 66,
+  "_type": "musicdisc",
+  "definition": {
+    "name": "Music Disc",
+    "rarity": "UNCOMMON",
+    "texture": "music_disc_nameless",
+    "description": "jaamleeto - Nameless",
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:Archeology"
+      }
+    ],
+    "specialInformation": {
+      "fixedValue": []
+    },
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "music": {
+      "value": "CUSTOM:primitive_spear_hit"
+    },
+    "lengthInTicks": 2400,
+    "analogOutput": 3
+  }
+}

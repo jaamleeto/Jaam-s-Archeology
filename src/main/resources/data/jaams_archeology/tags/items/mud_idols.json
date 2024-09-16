@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "jaams_archeology:explosive_idol",
+    "jaams_archeology:strange_idol",
+    "jaams_archeology:pigman_idol",
+    "jaams_archeology:skeletal_idol",
+    "jaams_archeology:rotten_idol",
+    "jaams_archeology:traitor_idol"
+  ]
+}

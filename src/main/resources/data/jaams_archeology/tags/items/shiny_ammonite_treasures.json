@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "jaams_archeology:primordial_gold_fragment",
+    "minecraft:gold_ingot",
+    "minecraft:emerald"
+  ]
+}

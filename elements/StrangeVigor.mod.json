@@ -1,0 +1,22 @@
+{
+  "_fv": 66,
+  "_type": "potioneffect",
+  "definition": {
+    "effectName": "Strange Vigor",
+    "icon": "strange_vigor",
+    "color": {
+      "value": -6750055,
+      "falpha": 0.0
+    },
+    "isInstant": false,
+    "mobEffectCategory": "NEUTRAL",
+    "renderStatusInInventory": true,
+    "renderStatusInHUD": true,
+    "onStarted": {
+      "name": "StrangeVigorEffectStartedapplied"
+    },
+    "onExpired": {
+      "name": "StrangeVigorEffectExpires"
+    }
+  }
+}

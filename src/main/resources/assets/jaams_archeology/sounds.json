@@ -1,0 +1,232 @@
+{
+  "ammonite_fired": {
+    "subtitle": "subtitles.ammonite_fired",
+    "sounds": [
+      {
+        "name": "jaams_archeology:ammonite_fired",
+        "stream": false
+      }
+    ]
+  },
+  "ammonite_breaks": {
+    "subtitle": "subtitles.ammonite_breaks",
+    "sounds": [
+      {
+        "name": "jaams_archeology:ammonite_breaks",
+        "stream": false
+      }
+    ]
+  },
+  "primitive_spear_fired": {
+    "subtitle": "subtitles.primitive_spear_fired",
+    "sounds": [
+      {
+        "name": "jaams_archeology:primitive_spear_fired",
+        "stream": false
+      }
+    ]
+  },
+  "primitive_spear_ground": {
+    "subtitle": "subtitles.primitive_spear_ground",
+    "sounds": [
+      {
+        "name": "jaams_archeology:primitive_spear_ground",
+        "stream": false
+      }
+    ]
+  },
+  "primitive_spear_hit": {
+    "subtitle": "subtitles.primitive_spear_hit",
+    "sounds": [
+      {
+        "name": "jaams_archeology:primitive_spear_hit",
+        "stream": false
+      }
+    ]
+  },
+  "primitive_spear_return": {
+    "subtitle": "subtitles.primitive_spear_return",
+    "sounds": [
+      {
+        "name": "jaams_archeology:primitive_spear_return",
+        "stream": false
+      }
+    ]
+  },
+  "spear_fragment_fired": {
+    "subtitle": "subtitles.spear_fragment_fired",
+    "sounds": [
+      {
+        "name": "jaams_archeology:spear_fragment_fired",
+        "stream": false
+      }
+    ]
+  },
+  "spear_fragment_ground": {
+    "subtitle": "subtitles.spear_fragment_ground",
+    "sounds": [
+      {
+        "name": "jaams_archeology:spear_fragment_ground",
+        "stream": false
+      }
+    ]
+  },
+  "spear_fragment_hit": {
+    "subtitle": "subtitles.spear_fragment_hit",
+    "sounds": [
+      {
+        "name": "jaams_archeology:spear_fragment_hit",
+        "stream": false
+      }
+    ]
+  },
+  "spear_of_longinus_ground": {
+    "subtitle": "subtitles.spear_of_longinus_ground",
+    "sounds": [
+      {
+        "name": "jaams_archeology:spear_of_longinus_ground",
+        "stream": false
+      }
+    ]
+  },
+  "spear_of_longinus_hit": {
+    "subtitle": "subtitles.spear_of_longinus_hit",
+    "sounds": [
+      {
+        "name": "jaams_archeology:spear_of_longinus_hit",
+        "stream": false
+      }
+    ]
+  },
+  "spear_of_longinus_return": {
+    "subtitle": "subtitles.spear_of_longinus_return",
+    "sounds": [
+      {
+        "name": "jaams_archeology:spear_of_longinus_return",
+        "stream": false
+      }
+    ]
+  },
+  "spear_of_longinus_throw": {
+    "subtitle": "subtitles.spear_of_longinus_throw",
+    "sounds": [
+      {
+        "name": "jaams_archeology:spear_of_longinus_throw",
+        "stream": false
+      }
+    ]
+  },
+  "idol_breaks": {
+    "subtitle": "subtitles.idol_breaks",
+    "sounds": [
+      {
+        "name": "jaams_archeology:idol_breaks",
+        "stream": false
+      }
+    ]
+  },
+  "war_roar_axe_critical": {
+    "sounds": [
+      {
+        "name": "jaams_archeology:war_roar_axe_critical",
+        "stream": false
+      }
+    ]
+  },
+  "explosive_idol_started": {
+    "sounds": [
+      {
+        "name": "jaams_archeology:explosive_idol_started",
+        "stream": false
+      }
+    ]
+  },
+  "explosive_idol_ends": {
+    "sounds": [
+      {
+        "name": "jaams_archeology:explosive_idol_ends",
+        "stream": false
+      }
+    ]
+  },
+  "pigman_idol_started": {
+    "sounds": [
+      {
+        "name": "jaams_archeology:pigman_idol_started",
+        "stream": false
+      }
+    ]
+  },
+  "pigman_idol_ends": {
+    "sounds": [
+      {
+        "name": "jaams_archeology:pigman_idol_ends",
+        "stream": false
+      }
+    ]
+  },
+  "rotten_idol_started": {
+    "sounds": [
+      {
+        "name": "jaams_archeology:rotten_idol_started",
+        "stream": false
+      }
+    ]
+  },
+  "rotten_idol_ends": {
+    "sounds": [
+      {
+        "name": "jaams_archeology:rotten_idol_ends",
+        "stream": false
+      }
+    ]
+  },
+  "skeletal_idol_started": {
+    "sounds": [
+      {
+        "name": "jaams_archeology:skeletal_idol_started",
+        "stream": false
+      }
+    ]
+  },
+  "skeletal_idol_ends": {
+    "sounds": [
+      {
+        "name": "jaams_archeology:skeletal_idol_ends",
+        "stream": false
+      }
+    ]
+  },
+  "strange_idol_started": {
+    "sounds": [
+      {
+        "name": "jaams_archeology:strange_idol_started",
+        "stream": false
+      }
+    ]
+  },
+  "strange_idol_ends": {
+    "sounds": [
+      {
+        "name": "jaams_archeology:strange_idol_ends",
+        "stream": false
+      }
+    ]
+  },
+  "traitor_idol_started": {
+    "sounds": [
+      {
+        "name": "jaams_archeology:traitor_idol_started",
+        "stream": false
+      }
+    ]
+  },
+  "traitor_idol_ends": {
+    "sounds": [
+      {
+        "name": "jaams_archeology:traitor_idol_ends",
+        "stream": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "parent": "item/handheld",
+  "loader": "forge:separate_transforms",
+  "textures": {
+    "layer0": "jaams_archeology:item/spear_of_longinus_1"
+  },
+  "base": {
+    "parent": "jaams_archeology:item/modeldata/spear_of_longinus_1_handheld"
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "jaams_archeology:item/modeldata/spear_of_longinus_1_gui"
+    },
+    "ground": {
+      "parent": "jaams_archeology:item/modeldata/spear_of_longinus_1_gui"
+    },
+    "fixed": {
+      "parent": "jaams_archeology:item/modeldata/spear_of_longinus_1_gui"
+    }
+  }
+}

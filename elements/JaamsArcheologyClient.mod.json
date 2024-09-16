@@ -1,0 +1,178 @@
+{
+  "_fv": 66,
+  "_type": "config",
+  "definition": {
+    "pools": [
+      {
+        "category": "Projectiles Size",
+        "entries": [
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 1,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 1.0,
+            "textDefault": "",
+            "comment": "",
+            "vardisplay": "Primitive Spear ",
+            "varname": "primitivespearsize",
+            "enablecomment": false,
+            "stringlist": []
+          },
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 1,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 1.5,
+            "textDefault": "",
+            "comment": "",
+            "vardisplay": "Ammonite",
+            "varname": "ammonitesize",
+            "enablecomment": false,
+            "stringlist": []
+          },
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 1,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 1.5,
+            "textDefault": "",
+            "comment": "",
+            "vardisplay": "Spear Fragment ",
+            "varname": "spearfragmentsize",
+            "enablecomment": false,
+            "stringlist": []
+          }
+        ]
+      },
+      {
+        "category": "Camera Effects",
+        "entries": [
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 0,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 0.0,
+            "textDefault": "",
+            "comment": "",
+            "vardisplay": "Shake",
+            "varname": "shake",
+            "enablecomment": false,
+            "stringlist": []
+          },
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 0,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 0.0,
+            "textDefault": "",
+            "comment": "",
+            "vardisplay": "Fov Modifier",
+            "varname": "fovmodifier",
+            "enablecomment": false,
+            "stringlist": []
+          }
+        ]
+      },
+      {
+        "category": "FOV Modifier Handler",
+        "entries": [
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 0,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 0.0,
+            "textDefault": "",
+            "comment": "",
+            "vardisplay": "Magnifying Glass",
+            "varname": "magnifyingglassfov",
+            "enablecomment": false,
+            "stringlist": []
+          },
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 0,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 0.0,
+            "textDefault": "",
+            "comment": "",
+            "vardisplay": "Primitive Spear",
+            "varname": "primitivespearfov",
+            "enablecomment": false,
+            "stringlist": []
+          },
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 0,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 0.0,
+            "textDefault": "",
+            "comment": "",
+            "vardisplay": "Spear Fragment",
+            "varname": "spearfragmentfov",
+            "enablecomment": false,
+            "stringlist": []
+          },
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 0,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 0.0,
+            "textDefault": "",
+            "comment": "",
+            "vardisplay": "Ammonites",
+            "varname": "ammonitefov",
+            "enablecomment": false,
+            "stringlist": []
+          }
+        ]
+      }
+    ],
+    "file": "jaams_archeology_client",
+    "configType": 2
+  }
+}

@@ -1,0 +1,351 @@
+{
+  "_fv": 66,
+  "_type": "config",
+  "definition": {
+    "pools": [
+      {
+        "category": "Effects Handler",
+        "entries": [
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 0,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 0.0,
+            "textDefault": "",
+            "comment": "",
+            "vardisplay": "Explosive Vigor",
+            "varname": "explosivevigor",
+            "enablecomment": false,
+            "stringlist": []
+          },
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 0,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 0.0,
+            "textDefault": "",
+            "comment": "",
+            "vardisplay": "Strange Vigor",
+            "varname": "strangevigor",
+            "enablecomment": false,
+            "stringlist": []
+          },
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 0,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 0.0,
+            "textDefault": "",
+            "comment": "",
+            "vardisplay": "Pigman's Vigor",
+            "varname": "pigmanvigor",
+            "enablecomment": false,
+            "stringlist": []
+          },
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 0,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 0.0,
+            "textDefault": "",
+            "comment": "",
+            "vardisplay": "Skeletal Vigor",
+            "varname": "skeletalvigor",
+            "enablecomment": false,
+            "stringlist": []
+          },
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 0,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 0.0,
+            "textDefault": "",
+            "comment": "",
+            "vardisplay": "Rotten Vigor",
+            "varname": "rottenvigor",
+            "enablecomment": false,
+            "stringlist": []
+          },
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 0,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 0.0,
+            "textDefault": "",
+            "comment": "",
+            "vardisplay": "Traitor's Vigor",
+            "varname": "traitorvigor",
+            "enablecomment": false,
+            "stringlist": []
+          }
+        ]
+      },
+      {
+        "category": "Weapon Mechanics ",
+        "entries": [
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 0,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 0.0,
+            "textDefault": "",
+            "comment": "",
+            "vardisplay": "Deflect",
+            "varname": "deflect",
+            "enablecomment": false,
+            "stringlist": []
+          }
+        ]
+      },
+      {
+        "category": "Projectile Behavior",
+        "entries": [
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 0,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 0.0,
+            "textDefault": "",
+            "comment": "",
+            "vardisplay": "Projectile Drop As Item",
+            "varname": "dropasitem",
+            "enablecomment": false,
+            "stringlist": []
+          },
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 0,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 0.0,
+            "textDefault": "",
+            "comment": "",
+            "vardisplay": "Ammonites Drops Items",
+            "varname": "ammonitedrops",
+            "enablecomment": false,
+            "stringlist": []
+          }
+        ]
+      },
+      {
+        "category": "Projectile Despawn Time",
+        "entries": [
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 1,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 1200.0,
+            "textDefault": "",
+            "comment": "",
+            "vardisplay": "Primitive Spear",
+            "varname": "primitivespeardespawn",
+            "enablecomment": false,
+            "stringlist": []
+          },
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 1,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 800.0,
+            "textDefault": "",
+            "comment": "",
+            "vardisplay": "Spear Fragment ",
+            "varname": "spearfragmentdespawn",
+            "enablecomment": false,
+            "stringlist": []
+          }
+        ]
+      },
+      {
+        "category": "Ranged Items Behavior",
+        "entries": [
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 0,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 0.0,
+            "textDefault": "",
+            "comment": "",
+            "vardisplay": "Throwable Ammonites",
+            "varname": "throwammonite",
+            "enablecomment": false,
+            "stringlist": []
+          },
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 0,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 0.0,
+            "textDefault": "",
+            "comment": "",
+            "vardisplay": "Throwable Primitive Spear",
+            "varname": "throwprimitivespear",
+            "enablecomment": false,
+            "stringlist": []
+          },
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 0,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 0.0,
+            "textDefault": "",
+            "comment": "",
+            "vardisplay": "Throwable  Spear Fragment",
+            "varname": "throwspearfragment",
+            "enablecomment": false,
+            "stringlist": []
+          }
+        ]
+      },
+      {
+        "category": "Right Click Abilities",
+        "entries": [
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 0,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 0.0,
+            "textDefault": "",
+            "comment": "",
+            "vardisplay": "Sword of Undying",
+            "varname": "swordofundying",
+            "enablecomment": false,
+            "stringlist": []
+          },
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 0,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 0.0,
+            "textDefault": "",
+            "comment": "",
+            "vardisplay": "Idols",
+            "varname": "idols",
+            "enablecomment": false,
+            "stringlist": []
+          }
+        ]
+      },
+      {
+        "category": "Can Block Attacks",
+        "entries": [
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 0,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 0.0,
+            "textDefault": "",
+            "comment": "",
+            "vardisplay": "Sword Of Undying",
+            "varname": "swordofundyingblock",
+            "enablecomment": false,
+            "stringlist": []
+          },
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 0,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 0.0,
+            "textDefault": "",
+            "comment": "",
+            "vardisplay": "Broken Sword Fragment",
+            "varname": "brokenswordblock",
+            "enablecomment": false,
+            "stringlist": []
+          }
+        ]
+      }
+    ],
+    "file": "jaams_archeology_server",
+    "configType": 1
+  }
+}

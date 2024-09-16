@@ -1,0 +1,28 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "jaams_archeology:item/magnifying_glass"
+  },
+	"display": {
+    "thirdperson_righthand": {
+        "rotation": [ 0, -0, 45 ],
+        "translation": [ 0.00, 3.50, 1.25 ],
+        "scale": [ 0.75, 0.75, 0.85 ]
+    },
+    "thirdperson_lefthand": {
+        "rotation": [ 0, 0, -45 ],
+        "translation": [ 0.00, 3.50, 1.25 ],
+        "scale": [ 0.75, 0.75, 0.85 ]
+    },
+    "firstperson_righthand": {
+        "rotation": [ 0, -90, 25 ],
+        "translation": [ 1.13, 3.20, 1.13 ],
+        "scale": [ 0.58, 0.58, 0.68 ]
+    },
+    "firstperson_lefthand": {
+        "rotation": [ 0, 90, -25 ],
+        "translation": [ 1.13, 3.20, 1.13 ],
+        "scale": [ 0.58, 0.58, 0.68 ]
+    }
+    }
+}

@@ -1,0 +1,21 @@
+{
+  "parent": "item/handheld",
+  "loader": "forge:separate_transforms",
+  "textures": {
+    "layer0": "jaams_archeology:item/primitive_spear"
+  },
+  "base": {
+    "parent": "jaams_archeology:item/primitive_spear_handheld"
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "jaams_archeology:item/primitive_spear_gui"
+    },
+    "ground": {
+      "parent": "jaams_archeology:item/primitive_spear_gui"
+    },
+    "fixed": {
+      "parent": "jaams_archeology:item/primitive_spear_gui"
+    }
+  }
+}

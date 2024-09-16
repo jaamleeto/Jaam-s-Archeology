@@ -1,0 +1,21 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "jaams_archeology:item/broken_sword_fragment_0",
+    "layer1": "jaams_archeology:item/broken_sword_fragment_1"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "custom_model_data": 0
+      },
+      "model": "jaams_archeology:item/modeldata/broken_sword_fragment_0"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1
+      },
+      "model": "jaams_archeology:item/modeldata/broken_sword_fragment_1"
+    }
+  ]
+}

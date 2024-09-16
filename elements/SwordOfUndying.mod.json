@@ -1,0 +1,45 @@
+{
+  "_fv": 66,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Sword",
+    "renderType": 0,
+    "blockingRenderType": 0,
+    "texture": "sword_of_undying",
+    "customModelName": "Normal",
+    "blockingModelName": "Normal blocking",
+    "name": "§eSword of Undying",
+    "specialInformation": {
+      "fixedValue": []
+    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:Archeology"
+      }
+    ],
+    "efficiency": 4.0,
+    "attackSpeed": 1.2,
+    "enchantability": 2,
+    "damageVsEntity": 8.0,
+    "usageCount": 676,
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "repairItems": [
+      {
+        "value": "CUSTOM:PrimordialGold"
+      }
+    ],
+    "immuneToFire": false,
+    "blockDropsTier": "STONE",
+    "blocksAffected": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onRightClickedInAir": {
+      "name": "SwordOfUndyingRightclicked"
+    },
+    "onEntityHitWith": {
+      "name": "SwordOfUndyingLivingEntityIsHitWithTool"
+    }
+  }
+}

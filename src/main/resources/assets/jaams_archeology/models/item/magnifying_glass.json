@@ -1,0 +1,20 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "jaams_archeology:item/magnifying_glass"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "custom_model_data": 0
+      },
+      "model": "jaams_archeology:item/modeldata/magnifying_glass_0"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1
+      },
+      "model": "jaams_archeology:item/modeldata/magnifying_glass_1"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "_fv": 66,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "music_disc",
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:DiscFragmentNameless"
+      },
+      {
+        "value": "CUSTOM:DiscFragmentNameless"
+      },
+      {
+        "value": "CUSTOM:DiscFragmentNameless"
+      },
+      {
+        "value": "CUSTOM:DiscFragmentNameless"
+      },
+      {
+        "value": "CUSTOM:DiscFragmentNameless"
+      },
+      {
+        "value": "CUSTOM:DiscFragmentNameless"
+      },
+      {
+        "value": "CUSTOM:DiscFragmentNameless"
+      },
+      {
+        "value": "CUSTOM:DiscFragmentNameless"
+      },
+      {
+        "value": "CUSTOM:DiscFragmentNameless"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:MusicDiscNameless"
+    },
+    "name": "music_disc_nameless_recipe",
+    "namespace": "mod"
+  }
+}
