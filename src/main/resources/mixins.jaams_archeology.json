@@ -4,8 +4,7 @@
   "compatibilityLevel": "JAVA_17",
   "refmap": "mixins.jaams_archeology.refmap.json",
   "mixins": [
-    "ItemInHandRendererMixin",
-    "ModConfigMixin"
+    "ItemInHandRendererMixin"
   ],
   "client": [],
   "minVersion": "0.8"

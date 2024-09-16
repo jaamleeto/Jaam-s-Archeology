@@ -2039,18 +2039,6 @@
           "src/main/java/net/jaams/jaamsarcheology/GlobalConfigManager.java"
         ]
       }
-    },
-    {
-      "name": "ModConfig",
-      "type": "mixin",
-      "compiles": false,
-      "locked_code": true,
-      "registry_name": "mod_config",
-      "metadata": {
-        "files": [
-          "src/main/java/net/jaams/jaamsarcheology/mixins/ModConfigMixin.java"
-        ]
-      }
     }
   ],
   "variable_elements": [
