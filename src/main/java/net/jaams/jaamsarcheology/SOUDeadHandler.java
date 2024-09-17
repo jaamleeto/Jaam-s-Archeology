@@ -36,7 +36,6 @@ import net.minecraft.advancements.CriteriaTriggers;
 
 import net.jaams.jaamsarcheology.network.JaamsArcheologyModVariables;
 import net.jaams.jaamsarcheology.item.SwordOfUndyingItem;
-import net.jaams.jaamsarcheology.configuration.JaamsArcheologyServerConfiguration;
 
 import java.util.List;
 
@@ -54,7 +53,6 @@ public class SOUDeadHandler {
 	private static class SOUDeadHandlerForgeBusEvents {
 		@SubscribeEvent
 		public static void serverLoad(ServerStartingEvent event) {
-			GlobalConfigManager.loadGlobalServerConfig(JaamsArcheologyServerConfiguration.SPEC);
 		}
 
 		@OnlyIn(Dist.CLIENT)

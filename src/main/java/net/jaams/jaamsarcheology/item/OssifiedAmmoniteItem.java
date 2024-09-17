@@ -18,7 +18,7 @@ import net.minecraft.network.chat.Component;
 
 import net.jaams.jaamsarcheology.init.JaamsArcheologyModSounds;
 import net.jaams.jaamsarcheology.entity.AmmoniteProjectileEntity;
-import net.jaams.jaamsarcheology.configuration.JaamsArcheologyServerConfiguration;
+import net.jaams.jaamsarcheology.configuration.JaamsArcheologyCommonConfiguration;
 
 import java.util.List;
 
@@ -34,34 +34,31 @@ public class OssifiedAmmoniteItem extends Item {
 
 	@Override
 	public UseAnim getUseAnimation(ItemStack itemstack) {
-		if (JaamsArcheologyServerConfiguration.THROWAMMONITE.get() == true) {
-			return UseAnim.SPEAR;
-		}
-		return UseAnim.NONE;
+		return UseAnim.SPEAR;
 	}
 
 	@Override
 	public int getUseDuration(ItemStack itemstack) {
-		if (JaamsArcheologyServerConfiguration.THROWAMMONITE.get() == true) {
-			return 72000;
-		}
-		return 0;
+		return 72000;
 	}
 
 	@Override
 	public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
 		ItemStack itemStack = player.getItemInHand(hand);
-		if (JaamsArcheologyServerConfiguration.THROWAMMONITE.get() == true) {
-			player.startUsingItem(hand);
-			return InteractionResultHolder.consume(itemStack);
-		} else {
-			return InteractionResultHolder.fail(itemStack);
+		if (!level.isClientSide()) {
+			if (JaamsArcheologyCommonConfiguration.THROWAMMONITE.get() == true) {
+				player.startUsingItem(hand);
+				return InteractionResultHolder.consume(itemStack);
+			} else {
+				return InteractionResultHolder.fail(itemStack);
+			}
 		}
+		return InteractionResultHolder.fail(itemStack);
 	}
 
 	@Override
 	public void releaseUsing(ItemStack ammoniteItemStack, Level level, LivingEntity entity, int durationUsed) {
-		if (JaamsArcheologyServerConfiguration.THROWAMMONITE.get() == true) {
+		if (JaamsArcheologyCommonConfiguration.THROWAMMONITE.get() == true) {
 			if (entity instanceof Player player) {
 				int remainingDuration = this.getUseDuration(ammoniteItemStack) - durationUsed;
 				if (remainingDuration >= 5) {

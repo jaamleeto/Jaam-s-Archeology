@@ -16,9 +16,9 @@ public class JaamsArcheologyClientConfiguration {
 	public static final ForgeConfigSpec.ConfigValue<Boolean> AMMONITEFOV;
 	static {
 		BUILDER.push("Projectiles Size");
-		PRIMITIVESPEARSIZE = BUILDER.define("Primitive Spear ", (double) 1);
-		AMMONITESIZE = BUILDER.define("Ammonite", (double) 1.5);
-		SPEARFRAGMENTSIZE = BUILDER.define("Spear Fragment ", (double) 1.5);
+		PRIMITIVESPEARSIZE = BUILDER.defineInRange("Primitive Spear", 1.0, 0.1, 10.0);
+		AMMONITESIZE = BUILDER.defineInRange("Ammonite", 1.5, 0.1, 10.0);
+		SPEARFRAGMENTSIZE = BUILDER.defineInRange("Spear Fragment", 1.5, 0.1, 10.0);
 		BUILDER.pop();
 		BUILDER.push("Camera Effects");
 		SHAKE = BUILDER.define("Shake", true);
@@ -30,8 +30,6 @@ public class JaamsArcheologyClientConfiguration {
 		SPEARFRAGMENTFOV = BUILDER.define("Spear Fragment", true);
 		AMMONITEFOV = BUILDER.define("Ammonites", true);
 		BUILDER.pop();
-
 		SPEC = BUILDER.build();
 	}
-
 }

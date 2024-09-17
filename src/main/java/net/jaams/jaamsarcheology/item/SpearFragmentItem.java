@@ -22,7 +22,7 @@ import net.minecraft.network.chat.Component;
 
 import net.jaams.jaamsarcheology.init.JaamsArcheologyModSounds;
 import net.jaams.jaamsarcheology.entity.SpearFragmentProjectileEntity;
-import net.jaams.jaamsarcheology.configuration.JaamsArcheologyServerConfiguration;
+import net.jaams.jaamsarcheology.configuration.JaamsArcheologyCommonConfiguration;
 
 import java.util.List;
 
@@ -69,34 +69,31 @@ public class SpearFragmentItem extends Item {
 
 	@Override
 	public UseAnim getUseAnimation(ItemStack itemstack) {
-		if (JaamsArcheologyServerConfiguration.THROWSPEARFRAGMENT.get() == true) {
-			return UseAnim.SPEAR;
-		}
-		return UseAnim.NONE;
+		return UseAnim.SPEAR;
 	}
 
 	@Override
 	public int getUseDuration(ItemStack itemstack) {
-		if (JaamsArcheologyServerConfiguration.THROWSPEARFRAGMENT.get() == true) {
-			return 72000;
-		}
-		return 0;
+		return 72000;
 	}
 
 	@Override
 	public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
 		ItemStack itemStack = player.getItemInHand(hand);
-		if (JaamsArcheologyServerConfiguration.THROWPRIMITIVESPEAR.get() == true) {
-			player.startUsingItem(hand);
-			return InteractionResultHolder.consume(itemStack);
-		} else {
-			return InteractionResultHolder.fail(itemStack);
+		if (!level.isClientSide()) {
+			if (JaamsArcheologyCommonConfiguration.THROWPRIMITIVESPEAR.get() == true) {
+				player.startUsingItem(hand);
+				return InteractionResultHolder.consume(itemStack);
+			} else {
+				return InteractionResultHolder.fail(itemStack);
+			}
 		}
+		return InteractionResultHolder.fail(itemStack);
 	}
 
 	@Override
 	public void releaseUsing(ItemStack weaponItemStack, Level level, LivingEntity entity, int durationUsed) {
-		if (JaamsArcheologyServerConfiguration.THROWSPEARFRAGMENT.get() == true) {
+		if (JaamsArcheologyCommonConfiguration.THROWSPEARFRAGMENT.get() == true) {
 			if (entity instanceof Player player) {
 				int remainingDuration = this.getUseDuration(weaponItemStack) - durationUsed;
 				if (remainingDuration >= 5) {

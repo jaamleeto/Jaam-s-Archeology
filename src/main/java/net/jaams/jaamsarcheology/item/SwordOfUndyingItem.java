@@ -26,7 +26,7 @@ import net.jaams.jaamsarcheology.procedures.SwordOfUndyingRightclickedProcedure;
 import net.jaams.jaamsarcheology.procedures.SwordOfUndyingLivingEntityIsHitWithToolProcedure;
 import net.jaams.jaamsarcheology.procedures.ItemInInventoryTickProcedure;
 import net.jaams.jaamsarcheology.init.JaamsArcheologyModItems;
-import net.jaams.jaamsarcheology.configuration.JaamsArcheologyServerConfiguration;
+import net.jaams.jaamsarcheology.configuration.JaamsArcheologyCommonConfiguration;
 
 import java.util.List;
 
@@ -78,34 +78,33 @@ public class SwordOfUndyingItem extends SwordItem {
 
 	@Override
 	public int getUseDuration(ItemStack itemstack) {
-		if (!ModList.get().isLoaded("epicfight") && JaamsArcheologyServerConfiguration.SWORDOFUNDYINGBLOCK.get() == true) {
-			return 72000;
-		}
-		return 0;
+		return 72000;
 	}
 
 	@Override
 	public InteractionResultHolder<ItemStack> use(Level world, Player entity, InteractionHand hand) {
 		ItemStack itemStack = entity.getItemInHand(hand);
-		// Verificar si SWORDOFUNDYINGBLOCK está activo y "epicfight" no está cargado
-		if (JaamsArcheologyServerConfiguration.SWORDOFUNDYINGBLOCK.get() && !ModList.get().isLoaded("epicfight")) {
-			// Si el jugador no está agachado, usar el ítem normalmente
-			if (!entity.isShiftKeyDown()) {
-				entity.startUsingItem(hand);
-				return new InteractionResultHolder<>(InteractionResult.CONSUME, itemStack);
+		if (!world.isClientSide()) {
+			// Verificar si SWORDOFUNDYINGBLOCK está activo y "epicfight" no está cargado
+			if (JaamsArcheologyCommonConfiguration.SWORDOFUNDYINGBLOCK.get() && !ModList.get().isLoaded("epicfight")) {
+				// Si el jugador no está agachado, usar el ítem normalmente
+				if (!entity.isShiftKeyDown()) {
+					entity.startUsingItem(hand);
+					return new InteractionResultHolder<>(InteractionResult.CONSUME, itemStack);
+				}
+			} else if (!JaamsArcheologyCommonConfiguration.SWORDOFUNDYING.get()) {
+				// Si SWORDOFUNDYING está inactivo, pero SWORDOFUNDYINGBLOCK está activo, no usar el ítem
+				return new InteractionResultHolder<>(InteractionResult.FAIL, itemStack);
 			}
-		} else if (!JaamsArcheologyServerConfiguration.SWORDOFUNDYING.get()) {
-			// Si SWORDOFUNDYING está inactivo, pero SWORDOFUNDYINGBLOCK está activo, no usar el ítem
-			return new InteractionResultHolder<>(InteractionResult.FAIL, itemStack);
-		}
-		// Si el jugador está agachado y SWORDOFUNDYING está activo, ejecutar la lógica correspondiente
-		if (entity.isShiftKeyDown() && JaamsArcheologyServerConfiguration.SWORDOFUNDYING.get()) {
-			InteractionResultHolder<ItemStack> ar = super.use(world, entity, hand);
-			SwordOfUndyingRightclickedProcedure.execute(world, entity.getX(), entity.getY(), entity.getZ(), entity, ar.getObject());
-			ar.getObject().hurtAndBreak(60, entity, (p_43388_) -> {
-				p_43388_.broadcastBreakEvent(entity.getUsedItemHand());
-			});
-			return ar;
+			// Si el jugador está agachado y SWORDOFUNDYING está activo, ejecutar la lógica correspondiente
+			if (entity.isShiftKeyDown() && JaamsArcheologyCommonConfiguration.SWORDOFUNDYING.get()) {
+				InteractionResultHolder<ItemStack> ar = super.use(world, entity, hand);
+				SwordOfUndyingRightclickedProcedure.execute(world, entity.getX(), entity.getY(), entity.getZ(), entity, ar.getObject());
+				ar.getObject().hurtAndBreak(60, entity, (p_43388_) -> {
+					p_43388_.broadcastBreakEvent(entity.getUsedItemHand());
+				});
+				return ar;
+			}
 		}
 		// Devolver el resultado por defecto si ninguna de las condiciones anteriores se cumple
 		return new InteractionResultHolder<>(InteractionResult.CONSUME, itemStack);
@@ -113,18 +112,12 @@ public class SwordOfUndyingItem extends SwordItem {
 
 	@Override
 	public UseAnim getUseAnimation(ItemStack itemstack) {
-		if (!ModList.get().isLoaded("epicfight") && JaamsArcheologyServerConfiguration.SWORDOFUNDYINGBLOCK.get() == true) {
-			return UseAnim.BLOCK;
-		}
-		return UseAnim.NONE;
+		return UseAnim.BLOCK;
 	}
 
 	@Override
 	public boolean canPerformAction(ItemStack stack, net.minecraftforge.common.ToolAction toolAction) {
-		if (!ModList.get().isLoaded("epicfight") && JaamsArcheologyServerConfiguration.SWORDOFUNDYINGBLOCK.get() == true) {
-			return toolAction.equals(ToolActions.SWORD_DIG) || toolAction.equals(ToolActions.SWORD_SWEEP) || toolAction.equals(ToolActions.SHIELD_BLOCK);
-		}
-		return toolAction.equals(ToolActions.SWORD_DIG) || toolAction.equals(ToolActions.SWORD_SWEEP);
+		return toolAction.equals(ToolActions.SWORD_DIG) || toolAction.equals(ToolActions.SWORD_SWEEP) || toolAction.equals(ToolActions.SHIELD_BLOCK);
 	}
 
 	@NotNull

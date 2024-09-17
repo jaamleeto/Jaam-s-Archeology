@@ -25,7 +25,7 @@ import net.minecraft.nbt.CompoundTag;
 
 import net.jaams.jaamsarcheology.procedures.ItemInInventoryTickProcedure;
 import net.jaams.jaamsarcheology.init.JaamsArcheologyModItems;
-import net.jaams.jaamsarcheology.configuration.JaamsArcheologyServerConfiguration;
+import net.jaams.jaamsarcheology.configuration.JaamsArcheologyCommonConfiguration;
 import net.jaams.jaamsarcheology.IDyeableItem;
 
 import java.util.List;
@@ -109,34 +109,31 @@ public class BrokenSwordFragmentItem extends SwordItem implements IDyeableItem {
 
 	@Override
 	public int getUseDuration(ItemStack itemstack) {
-		if (JaamsArcheologyServerConfiguration.BROKENSWORDBLOCK.get() == true) {
-			return 72000;
-		}
-		return 0;
-	}
-
-	@Override
-	public InteractionResultHolder<ItemStack> use(Level world, Player entity, InteractionHand hand) {
-		if (JaamsArcheologyServerConfiguration.BROKENSWORDBLOCK.get() == true) {
-			entity.startUsingItem(hand);
-		}
-		return new InteractionResultHolder<>(InteractionResult.FAIL, entity.getItemInHand(hand));
+		return 72000;
 	}
 
 	@Override
 	public UseAnim getUseAnimation(ItemStack itemstack) {
-		if (JaamsArcheologyServerConfiguration.BROKENSWORDBLOCK.get() == true) {
-			return UseAnim.BLOCK;
+		return UseAnim.BLOCK;
+	}
+
+	@Override
+	public InteractionResultHolder<ItemStack> use(Level level, Player entity, InteractionHand hand) {
+		// Verificar si estamos en el servidor (lado del servidor)
+		if (!level.isClientSide()) {
+			// Verificar la configuración solo del lado del servidor
+			if (JaamsArcheologyCommonConfiguration.BROKENSWORDBLOCK.get()) {
+				entity.startUsingItem(hand);
+				return new InteractionResultHolder<>(InteractionResult.CONSUME, entity.getItemInHand(hand));
+			}
 		}
-		return UseAnim.NONE;
+		// Retornar un valor por defecto si las condiciones no se cumplen
+		return new InteractionResultHolder<>(InteractionResult.PASS, entity.getItemInHand(hand));
 	}
 
 	@Override
 	public boolean canPerformAction(ItemStack stack, net.minecraftforge.common.ToolAction toolAction) {
-		if (JaamsArcheologyServerConfiguration.SWORDOFUNDYINGBLOCK.get() == true) {
-			return toolAction.equals(ToolActions.SWORD_DIG) || toolAction.equals(ToolActions.SWORD_SWEEP) || toolAction.equals(ToolActions.SHIELD_BLOCK);
-		}
-		return toolAction.equals(ToolActions.SWORD_DIG) || toolAction.equals(ToolActions.SWORD_SWEEP);
+		return toolAction.equals(ToolActions.SWORD_DIG) || toolAction.equals(ToolActions.SWORD_SWEEP) || toolAction.equals(ToolActions.SHIELD_BLOCK);
 	}
 
 	@NotNull

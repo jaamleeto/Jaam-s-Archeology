@@ -41,7 +41,7 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.particles.BlockParticleOption;
 
 import net.jaams.jaamsarcheology.init.JaamsArcheologyModEntities;
-import net.jaams.jaamsarcheology.configuration.JaamsArcheologyServerConfiguration;
+import net.jaams.jaamsarcheology.configuration.JaamsArcheologyCommonConfiguration;
 
 import javax.annotation.Nullable;
 
@@ -282,8 +282,8 @@ public class SpearProjectileEntity extends AbstractArrow implements IEntityAddit
 	@Override
 	protected void tickDespawn() {
 		life++;
-		if (life >= JaamsArcheologyServerConfiguration.PRIMITIVESPEARDESPAWN.get()) {
-			if (JaamsArcheologyServerConfiguration.DROPASITEM.get() == true) {
+		if (life >= JaamsArcheologyCommonConfiguration.PRIMITIVESPEARDESPAWN.get()) {
+			if (JaamsArcheologyCommonConfiguration.DROPASITEM.get() == true) {
 				dropAsItem();
 			}
 			discard();

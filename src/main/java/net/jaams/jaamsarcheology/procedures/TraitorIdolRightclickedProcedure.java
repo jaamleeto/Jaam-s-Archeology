@@ -22,14 +22,14 @@ import net.minecraft.client.Minecraft;
 
 import net.jaams.jaamsarcheology.network.JaamsArcheologyModVariables;
 import net.jaams.jaamsarcheology.init.JaamsArcheologyModMobEffects;
-import net.jaams.jaamsarcheology.configuration.JaamsArcheologyServerConfiguration;
+import net.jaams.jaamsarcheology.configuration.JaamsArcheologyCommonConfiguration;
 import net.jaams.jaamsarcheology.JaamsArcheologyMod;
 
 public class TraitorIdolRightclickedProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity, ItemStack itemstack) {
 		if (entity == null)
 			return;
-		if (JaamsArcheologyServerConfiguration.IDOLS.get() == true) {
+		if (JaamsArcheologyCommonConfiguration.IDOLS.get() == true) {
 			if (!world.isClientSide()) {
 				ServerLevel serverWorld = (ServerLevel) world;
 				Item item = itemstack.getItem(); // Get the Item from the ItemStack
@@ -82,7 +82,7 @@ public class TraitorIdolRightclickedProcedure {
 			}.checkGamemode(entity))) {
 				itemstack.shrink(1);
 			}
-			if (JaamsArcheologyServerConfiguration.TRAITORVIGOR.get() == true) {
+			if (JaamsArcheologyCommonConfiguration.TRAITORVIGOR.get() == true && !world.isClientSide()) {
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 					_entity.addEffect(new MobEffectInstance(JaamsArcheologyModMobEffects.TRAITOR_VIGOR.get(), 800, 0));
 			}

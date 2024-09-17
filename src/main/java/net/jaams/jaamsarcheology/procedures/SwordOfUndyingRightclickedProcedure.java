@@ -24,14 +24,14 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.client.Minecraft;
 
 import net.jaams.jaamsarcheology.network.JaamsArcheologyModVariables;
-import net.jaams.jaamsarcheology.configuration.JaamsArcheologyServerConfiguration;
+import net.jaams.jaamsarcheology.configuration.JaamsArcheologyCommonConfiguration;
 import net.jaams.jaamsarcheology.JaamsArcheologyMod;
 
 import java.util.List;
 
 public class SwordOfUndyingRightclickedProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity, ItemStack itemstack) {
-		if (entity == null || !JaamsArcheologyServerConfiguration.SWORDOFUNDYING.get())
+		if (entity == null || !JaamsArcheologyCommonConfiguration.SWORDOFUNDYING.get())
 			return;
 		if (entity.isShiftKeyDown()) {
 			if (world.isClientSide()) {

@@ -44,9 +44,6 @@ public class FovModifier {
 		public static void onFOVModifier(ComputeFovModifierEvent event) {
 			Player player = event.getPlayer();
 			if (player != null && player.isUsingItem()) {
-				if (JaamsArcheologyClientConfiguration.FOVMODIFIER.get() == false) {
-					event.setCanceled(true);
-				}
 				if (JaamsArcheologyClientConfiguration.FOVMODIFIER.get() == true) {
 					ItemStack useStack = player.getUseItem();
 					Item useItem = useStack.getItem();

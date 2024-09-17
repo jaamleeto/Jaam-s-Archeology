@@ -22,14 +22,14 @@ import net.minecraft.client.Minecraft;
 
 import net.jaams.jaamsarcheology.network.JaamsArcheologyModVariables;
 import net.jaams.jaamsarcheology.init.JaamsArcheologyModMobEffects;
-import net.jaams.jaamsarcheology.configuration.JaamsArcheologyServerConfiguration;
+import net.jaams.jaamsarcheology.configuration.JaamsArcheologyCommonConfiguration;
 import net.jaams.jaamsarcheology.JaamsArcheologyMod;
 
 public class RottenIdolRightclickedProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity, ItemStack itemstack) {
 		if (entity == null)
 			return;
-		if (JaamsArcheologyServerConfiguration.IDOLS.get() == true) {
+		if (JaamsArcheologyCommonConfiguration.IDOLS.get() == true) {
 			if (!world.isClientSide()) {
 				ServerLevel serverWorld = (ServerLevel) world;
 				Item item = itemstack.getItem(); // Get the Item from the ItemStack
@@ -82,7 +82,7 @@ public class RottenIdolRightclickedProcedure {
 			}.checkGamemode(entity))) {
 				itemstack.shrink(1);
 			}
-			if (JaamsArcheologyServerConfiguration.ROTTENVIGOR.get() == true) {
+			if (JaamsArcheologyCommonConfiguration.ROTTENVIGOR.get() == true && !world.isClientSide()) {
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 					_entity.addEffect(new MobEffectInstance(JaamsArcheologyModMobEffects.ROTTEN_VIGOR.get(), 800, 0));
 			}

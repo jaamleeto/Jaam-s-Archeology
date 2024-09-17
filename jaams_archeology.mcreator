@@ -1054,7 +1054,7 @@
       "name": "JaamsArcheologyClient",
       "type": "config",
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "jaams_archeology_client",
       "metadata": {
         "files": [
@@ -1965,19 +1965,6 @@
       "path": "~/Events"
     },
     {
-      "name": "JaamsArcheologyServer",
-      "type": "config",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "jaams_archeology_server",
-      "metadata": {
-        "files": [
-          "src/main/java/net/jaams/jaamsarcheology/configuration/JaamsArcheologyServerConfiguration.java"
-        ]
-      },
-      "path": "~/Config"
-    },
-    {
       "name": "DamageRenderer",
       "type": "code",
       "compiles": true,
@@ -2029,16 +2016,17 @@
       "path": "~/Idols Procedures/Enderman Idol"
     },
     {
-      "name": "GlobalConfigManager",
-      "type": "code",
+      "name": "JaamsArcheologyCommon",
+      "type": "config",
       "compiles": true,
-      "locked_code": true,
-      "registry_name": "global_config_manager",
+      "locked_code": false,
+      "registry_name": "jaams_archeology_common",
       "metadata": {
         "files": [
-          "src/main/java/net/jaams/jaamsarcheology/GlobalConfigManager.java"
+          "src/main/java/net/jaams/jaamsarcheology/configuration/JaamsArcheologyCommonConfiguration.java"
         ]
-      }
+      },
+      "path": "~/Config"
     }
   ],
   "variable_elements": [

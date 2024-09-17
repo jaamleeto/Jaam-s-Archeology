@@ -6,7 +6,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 
-import net.jaams.jaamsarcheology.configuration.JaamsArcheologyServerConfiguration;
+import net.jaams.jaamsarcheology.configuration.JaamsArcheologyCommonConfiguration;
 import net.jaams.jaamsarcheology.configuration.JaamsArcheologyClientConfiguration;
 import net.jaams.jaamsarcheology.JaamsArcheologyMod;
 
@@ -16,7 +16,7 @@ public class JaamsArcheologyModConfigs {
 	public static void register(FMLConstructModEvent event) {
 		event.enqueueWork(() -> {
 			ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, JaamsArcheologyClientConfiguration.SPEC, "jaams_archeology_client.toml");
-			ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, JaamsArcheologyServerConfiguration.SPEC, "jaams_archeology_server.toml");
+			ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, JaamsArcheologyCommonConfiguration.SPEC, "jaams_archeology_common.toml");
 		});
 	}
 }

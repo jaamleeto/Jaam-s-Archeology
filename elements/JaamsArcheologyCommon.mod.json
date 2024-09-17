@@ -345,7 +345,7 @@
         ]
       }
     ],
-    "file": "jaams_archeology_server",
-    "configType": 1
+    "file": "jaams_archeology_common",
+    "configType": 0
   }
 }

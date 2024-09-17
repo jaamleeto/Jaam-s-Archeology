@@ -40,7 +40,7 @@ import net.minecraft.core.Holder;
 
 import net.jaams.jaamsarcheology.init.JaamsArcheologyModItems;
 import net.jaams.jaamsarcheology.init.JaamsArcheologyModEntities;
-import net.jaams.jaamsarcheology.configuration.JaamsArcheologyServerConfiguration;
+import net.jaams.jaamsarcheology.configuration.JaamsArcheologyCommonConfiguration;
 
 import javax.annotation.Nullable;
 
@@ -304,7 +304,7 @@ public class AmmoniteProjectileEntity extends AbstractArrow implements IEntityAd
 	}
 
 	private void ShinyRandomItemFromTag() {
-		if (JaamsArcheologyServerConfiguration.AMMONITEDROPS.get() == true) {
+		if (JaamsArcheologyCommonConfiguration.AMMONITEDROPS.get() == true) {
 			if (!level().isClientSide && level() instanceof ServerLevel serverLevel) {
 				List<Item> items = StreamSupport.stream(BuiltInRegistries.ITEM.getTagOrEmpty(SHINY_AMMONITE_DROPS_TAG).spliterator(), false).map(Holder::value).collect(Collectors.toList());
 				if (!items.isEmpty()) {
@@ -319,7 +319,7 @@ public class AmmoniteProjectileEntity extends AbstractArrow implements IEntityAd
 	}
 
 	private void PetrifiedRandomItemFromTag() {
-		if (JaamsArcheologyServerConfiguration.AMMONITEDROPS.get() == true) {
+		if (JaamsArcheologyCommonConfiguration.AMMONITEDROPS.get() == true) {
 			if (!level().isClientSide && level() instanceof ServerLevel serverLevel) {
 				List<Item> items = StreamSupport.stream(BuiltInRegistries.ITEM.getTagOrEmpty(PETRIFIED_AMMONITE_DROPS_TAG).spliterator(), false).map(Holder::value).collect(Collectors.toList());
 				if (!items.isEmpty()) {
@@ -334,7 +334,7 @@ public class AmmoniteProjectileEntity extends AbstractArrow implements IEntityAd
 	}
 
 	private void OssifiedRandomItemFromTag() {
-		if (JaamsArcheologyServerConfiguration.AMMONITEDROPS.get() == true) {
+		if (JaamsArcheologyCommonConfiguration.AMMONITEDROPS.get() == true) {
 			if (!level().isClientSide && level() instanceof ServerLevel serverLevel) {
 				List<Item> items = StreamSupport.stream(BuiltInRegistries.ITEM.getTagOrEmpty(OSSIFIED_AMMONITE_DROPS_TAG).spliterator(), false).map(Holder::value).collect(Collectors.toList());
 				if (!items.isEmpty()) {

@@ -2,7 +2,7 @@ package net.jaams.jaamsarcheology.configuration;
 
 import net.minecraftforge.common.ForgeConfigSpec;
 
-public class JaamsArcheologyServerConfiguration {
+public class JaamsArcheologyCommonConfiguration {
 	public static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
 	public static final ForgeConfigSpec SPEC;
 	public static final ForgeConfigSpec.ConfigValue<Boolean> EXPLOSIVEVIGOR;
