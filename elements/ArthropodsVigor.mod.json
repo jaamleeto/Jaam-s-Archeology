@@ -1,0 +1,22 @@
+{
+  "_fv": 66,
+  "_type": "potioneffect",
+  "definition": {
+    "effectName": "Arthropod's Vigor",
+    "icon": "arthropods_vigor",
+    "color": {
+      "value": -26368,
+      "falpha": 0.0
+    },
+    "isInstant": false,
+    "mobEffectCategory": "NEUTRAL",
+    "renderStatusInInventory": true,
+    "renderStatusInHUD": true,
+    "onStarted": {
+      "name": "ArthropodsVigorEffectStartedapplied"
+    },
+    "onExpired": {
+      "name": "ArthropodsVigorEffectExpires"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "jaams_archeology:block/primordial_gold_block",
+    "up": "jaams_archeology:block/primordial_gold_block",
+    "north": "jaams_archeology:block/primordial_gold_block",
+    "east": "jaams_archeology:block/primordial_gold_block",
+    "south": "jaams_archeology:block/primordial_gold_block",
+    "west": "jaams_archeology:block/primordial_gold_block",
+    "particle": "jaams_archeology:block/primordial_gold_block"
+  },
+  "render_type": "solid"
+}

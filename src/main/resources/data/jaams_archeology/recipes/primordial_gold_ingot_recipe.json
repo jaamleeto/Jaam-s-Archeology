@@ -3,16 +3,13 @@
   "group": "primordial_gold",
   "category": "misc",
   "pattern": [
-    " a ",
-    "aba",
-    " a "
+    "aaa",
+    "aaa",
+    "aaa"
   ],
   "key": {
     "a": {
       "item": "jaams_archeology:primordial_gold_fragment"
-    },
-    "b": {
-      "item": "minecraft:gold_ingot"
     }
   },
   "result": {

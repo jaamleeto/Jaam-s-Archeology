@@ -241,7 +241,7 @@
           }
         ]
       },
-      "path": "~/Tooltips"
+      "path": "~/Loot Tables/Tooltips"
     },
     {
       "name": "SpearRecipe",
@@ -332,20 +332,7 @@
           "src/main/java/net/jaams/jaamsarcheology/ItemRandomizer.java"
         ]
       },
-      "path": "~/Events"
-    },
-    {
-      "name": "FovModifier",
-      "type": "code",
-      "compiles": true,
-      "locked_code": true,
-      "registry_name": "fov_modifier",
-      "metadata": {
-        "files": [
-          "src/main/java/net/jaams/jaamsarcheology/FovModifier.java"
-        ]
-      },
-      "path": "~/Events"
+      "path": "~/Custom Code"
     },
     {
       "name": "OnItemUsing",
@@ -410,7 +397,7 @@
           }
         ]
       },
-      "path": "~/Idols Procedures/Zombie Idol"
+      "path": "~/Idols Procedures/Rotten Idol"
     },
     {
       "name": "ZombieSetTarget",
@@ -449,7 +436,7 @@
           }
         ]
       },
-      "path": "~/Idols Procedures/Zombie Idol"
+      "path": "~/Idols Procedures/Rotten Idol"
     },
     {
       "name": "SkeletonIdolGlobal",
@@ -472,7 +459,7 @@
           }
         ]
       },
-      "path": "~/Idols Procedures/Skeleton Idol"
+      "path": "~/Idols Procedures/Skeletal Idol"
     },
     {
       "name": "SkeletonSetTarget",
@@ -511,69 +498,7 @@
           }
         ]
       },
-      "path": "~/Idols Procedures/Skeleton Idol"
-    },
-    {
-      "name": "PiglinIdolGlobal",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": true,
-      "registry_name": "piglin_idol_global",
-      "metadata": {
-        "files": [
-          "src/main/java/net/jaams/jaamsarcheology/procedures/PiglinIdolGlobalProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "sourceentity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/Idols Procedures/Piglin Idol"
-    },
-    {
-      "name": "PiglinSetTarget",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "piglin_set_target",
-      "metadata": {
-        "files": [
-          "src/main/java/net/jaams/jaamsarcheology/procedures/PiglinSetTargetProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "sourceentity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/Idols Procedures/Piglin Idol"
+      "path": "~/Idols Procedures/Skeletal Idol"
     },
     {
       "name": "IllagerIdolGlobal",
@@ -596,7 +521,7 @@
           }
         ]
       },
-      "path": "~/Idols Procedures/Illager Idol"
+      "path": "~/Idols Procedures/Traitor Idol"
     },
     {
       "name": "IllagerSetTarget",
@@ -635,7 +560,7 @@
           }
         ]
       },
-      "path": "~/Idols Procedures/Illager Idol"
+      "path": "~/Idols Procedures/Traitor Idol"
     },
     {
       "name": "CreeperIdolGlobal",
@@ -658,7 +583,7 @@
           }
         ]
       },
-      "path": "~/Idols Procedures/Creeper Idol"
+      "path": "~/Idols Procedures/Explosive Idol"
     },
     {
       "name": "EndermanIdolGlobal",
@@ -681,7 +606,7 @@
           }
         ]
       },
-      "path": "~/Idols Procedures/Enderman Idol"
+      "path": "~/Idols Procedures/Strange Idol"
     },
     {
       "name": "SwordOfUndyingLivingEntityIsHitWithTool",
@@ -752,19 +677,6 @@
         ]
       },
       "path": "~/Weapons/Procedures"
-    },
-    {
-      "name": "CameraShake",
-      "type": "code",
-      "compiles": true,
-      "locked_code": true,
-      "registry_name": "camera_shake",
-      "metadata": {
-        "files": [
-          "src/main/java/net/jaams/jaamsarcheology/CameraShake.java"
-        ]
-      },
-      "path": "~/Events"
     },
     {
       "name": "CriticalDetect",
@@ -913,7 +825,7 @@
           }
         ]
       },
-      "path": "~/Idols Procedures/Creeper Idol"
+      "path": "~/Idols Procedures/Explosive Idol"
     },
     {
       "name": "SwordOfUndyingRecipe",
@@ -927,19 +839,6 @@
         ]
       },
       "path": "~/Recipes"
-    },
-    {
-      "name": "HandRenderHandler",
-      "type": "code",
-      "compiles": true,
-      "locked_code": true,
-      "registry_name": "hand_render_handler",
-      "metadata": {
-        "files": [
-          "src/main/java/net/jaams/jaamsarcheology/HandRenderHandler.java"
-        ]
-      },
-      "path": "~/Events"
     },
     {
       "name": "OnFinishedUsing",
@@ -956,25 +855,6 @@
             "name": "entity",
             "type": "entity"
           },
-          {
-            "name": "itemstack",
-            "type": "itemstack"
-          }
-        ]
-      },
-      "path": "~/Procedures"
-    },
-    {
-      "name": "ItemInInventoryTick",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": true,
-      "registry_name": "item_in_inventory_tick",
-      "metadata": {
-        "files": [
-          "src/main/java/net/jaams/jaamsarcheology/procedures/ItemInInventoryTickProcedure.java"
-        ],
-        "dependencies": [
           {
             "name": "itemstack",
             "type": "itemstack"
@@ -1092,20 +972,6 @@
       "path": "~/Idols"
     },
     {
-      "name": "PigmanIdol",
-      "type": "item",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "pigman_idol",
-      "metadata": {
-        "files": [
-          "src/main/java/net/jaams/jaamsarcheology/item/PigmanIdolItem.java",
-          "src/main/resources/assets/jaams_archeology/models/item/pigman_idol.json"
-        ]
-      },
-      "path": "~/Idols"
-    },
-    {
       "name": "SkeletalIdol",
       "type": "item",
       "compiles": true,
@@ -1169,19 +1035,6 @@
       "metadata": {
         "files": [
           "src/main/java/net/jaams/jaamsarcheology/potion/StrangeVigorMobEffect.java"
-        ]
-      },
-      "path": "~/Effects"
-    },
-    {
-      "name": "PigmanVigor",
-      "type": "potioneffect",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "pigman_vigor",
-      "metadata": {
-        "files": [
-          "src/main/java/net/jaams/jaamsarcheology/potion/PigmanVigorMobEffect.java"
         ]
       },
       "path": "~/Effects"
@@ -1339,76 +1192,6 @@
       "metadata": {
         "files": [
           "src/main/java/net/jaams/jaamsarcheology/procedures/StrangeVigorEffectExpiresProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/Effects/Procedures"
-    },
-    {
-      "name": "PigmanVigorEffectStartedapplied",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "pigman_vigor_effect_startedapplied",
-      "metadata": {
-        "files": [
-          "src/main/java/net/jaams/jaamsarcheology/procedures/PigmanVigorEffectStartedappliedProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/Effects/Procedures"
-    },
-    {
-      "name": "PigmanVigorEffectExpires",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "pigman_vigor_effect_expires",
-      "metadata": {
-        "files": [
-          "src/main/java/net/jaams/jaamsarcheology/procedures/PigmanVigorEffectExpiresProcedure.java"
         ],
         "dependencies": [
           {
@@ -1724,45 +1507,6 @@
       "path": "~/Idols/Procedures"
     },
     {
-      "name": "PigmanIdolRightclicked",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "pigman_idol_rightclicked",
-      "metadata": {
-        "files": [
-          "src/main/java/net/jaams/jaamsarcheology/procedures/PigmanIdolRightclickedProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "itemstack",
-            "type": "itemstack"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/Idols/Procedures"
-    },
-    {
       "name": "SkeletalIdolRightclicked",
       "type": "procedure",
       "compiles": true,
@@ -1913,7 +1657,7 @@
           "src/main/java/net/jaams/jaamsarcheology/SOUDeadHandler.java"
         ]
       },
-      "path": "~/Events"
+      "path": "~/Custom Code"
     },
     {
       "name": "IDyeableItem",
@@ -1926,7 +1670,7 @@
           "src/main/java/net/jaams/jaamsarcheology/IDyeableItem.java"
         ]
       },
-      "path": "~/Events"
+      "path": "~/Custom Code"
     },
     {
       "name": "ColorRegister",
@@ -1939,7 +1683,7 @@
           "src/main/java/net/jaams/jaamsarcheology/ColorRegister.java"
         ]
       },
-      "path": "~/Events"
+      "path": "~/Custom Code"
     },
     {
       "name": "TotemAnimHandler",
@@ -1962,19 +1706,7 @@
           }
         ]
       },
-      "path": "~/Events"
-    },
-    {
-      "name": "DamageRenderer",
-      "type": "code",
-      "compiles": true,
-      "locked_code": true,
-      "registry_name": "damage_renderer",
-      "metadata": {
-        "files": [
-          "src/main/java/net/jaams/jaamsarcheology/DamageRenderer.java"
-        ]
-      }
+      "path": "~/Procedures"
     },
     {
       "name": "EndermanSetTarget",
@@ -2013,13 +1745,13 @@
           }
         ]
       },
-      "path": "~/Idols Procedures/Enderman Idol"
+      "path": "~/Idols Procedures/Strange Idol"
     },
     {
       "name": "JaamsArcheologyCommon",
       "type": "config",
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "jaams_archeology_common",
       "metadata": {
         "files": [
@@ -2027,6 +1759,525 @@
         ]
       },
       "path": "~/Config"
+    },
+    {
+      "name": "JaamsArcheologyModConfigs",
+      "type": "mixin",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "jaams_archeology_mod_configs",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/mixins/JaamsArcheologyModConfigsMixin.java"
+        ]
+      },
+      "path": "~/Mixins"
+    },
+    {
+      "name": "SpearFragmentDispenseBehavior",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "spear_fragment_dispense_behavior",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/procedures/SpearFragmentDispenseBehaviorProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/Dispenser Behavior"
+    },
+    {
+      "name": "AmmoniteDispenseBehavior",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "ammonite_dispense_behavior",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/procedures/AmmoniteDispenseBehaviorProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/Dispenser Behavior"
+    },
+    {
+      "name": "InteractionHandler",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "interaction_handler",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/InteractionHandler.java"
+        ]
+      },
+      "path": "~/Custom Code"
+    },
+    {
+      "name": "GuardianIdol",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "guardian_idol",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/item/GuardianIdolItem.java",
+          "src/main/resources/assets/jaams_archeology/models/item/guardian_idol.json"
+        ]
+      },
+      "path": "~/Idols"
+    },
+    {
+      "name": "GuardianIdolRightclicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "guardian_idol_rightclicked",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/procedures/GuardianIdolRightclickedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Idols/Procedures"
+    },
+    {
+      "name": "ArthropodsIdol",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "arthropods_idol",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/jaams_archeology/models/item/arthropods_idol.json",
+          "src/main/java/net/jaams/jaamsarcheology/item/ArthropodsIdolItem.java"
+        ]
+      },
+      "path": "~/Idols"
+    },
+    {
+      "name": "ArthropodsIdolRightclicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "arthropods_idol_rightclicked",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/procedures/ArthropodsIdolRightclickedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Idols/Procedures"
+    },
+    {
+      "name": "ArthropodsVigorEffectStartedapplied",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "arthropods_vigor_effect_startedapplied",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/procedures/ArthropodsVigorEffectStartedappliedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Effects/Procedures"
+    },
+    {
+      "name": "ArthropodsVigorEffectExpires",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "arthropods_vigor_effect_expires",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/procedures/ArthropodsVigorEffectExpiresProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Effects/Procedures"
+    },
+    {
+      "name": "ArthropodsVigor",
+      "type": "potioneffect",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "arthropods_vigor",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/potion/ArthropodsVigorMobEffect.java"
+        ]
+      },
+      "path": "~/Effects"
+    },
+    {
+      "name": "GuardianVigorEffectStartedapplied",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "guardian_vigor_effect_startedapplied",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/procedures/GuardianVigorEffectStartedappliedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Effects/Procedures"
+    },
+    {
+      "name": "GuardianVigorEffectExpires",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "guardian_vigor_effect_expires",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/procedures/GuardianVigorEffectExpiresProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Effects/Procedures"
+    },
+    {
+      "name": "GuardianVigor",
+      "type": "potioneffect",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "guardian_vigor",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/potion/GuardianVigorMobEffect.java"
+        ]
+      },
+      "path": "~/Effects"
+    },
+    {
+      "name": "WeightedItem",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "weighted_item",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/WeightedItem.java"
+        ]
+      },
+      "path": "~/Custom Code"
+    },
+    {
+      "name": "PrimordialGoldBlock",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "primordial_gold_block",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/jaams_archeology/models/block/primordial_gold_block.json",
+          "src/main/java/net/jaams/jaamsarcheology/block/PrimordialGoldBlockBlock.java",
+          "src/main/resources/assets/jaams_archeology/blockstates/primordial_gold_block.json",
+          "src/main/resources/assets/jaams_archeology/models/item/primordial_gold_block.json",
+          "src/main/resources/data/jaams_archeology/loot_tables/blocks/primordial_gold_block.json"
+        ]
+      },
+      "path": "~/Blocks"
+    },
+    {
+      "name": "TotemOfUndyingRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "totem_of_undying_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/jaams_archeology/recipes/totem_of_undying_recipe.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "GuardianIdolGlobal",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "guardian_idol_global",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/procedures/GuardianIdolGlobalProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Idols Procedures/Guardian Idol"
+    },
+    {
+      "name": "GuardianSetTarget",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "guardian_set_target",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/procedures/GuardianSetTargetProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Idols Procedures/Guardian Idol"
+    },
+    {
+      "name": "ArthropodsIdolGlobal",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "arthropods_idol_global",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/procedures/ArthropodsIdolGlobalProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Idols Procedures/Arthropod Idol"
+    },
+    {
+      "name": "ArthropodSetTarget",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "arthropod_set_target",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/procedures/ArthropodSetTargetProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Idols Procedures/Arthropod Idol"
+    },
+    {
+      "name": "EntityBehaviorHandler",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "entity_behavior_handler",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/EntityBehaviorHandler.java"
+        ]
+      },
+      "path": "~/Custom Code"
+    },
+    {
+      "name": "CameraEventsHandler",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "camera_events_handler",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jaams/jaamsarcheology/CameraEventsHandler.java"
+        ]
+      },
+      "path": "~/Custom Code"
     }
   ],
   "variable_elements": [
@@ -2199,22 +2450,6 @@
       "subtitle": ""
     },
     {
-      "name": "pigman_idol_started",
-      "files": [
-        "pigman_idol_started"
-      ],
-      "category": "player",
-      "subtitle": ""
-    },
-    {
-      "name": "pigman_idol_ends",
-      "files": [
-        "pigman_idol_ends"
-      ],
-      "category": "player",
-      "subtitle": ""
-    },
-    {
       "name": "rotten_idol_started",
       "files": [
         "rotten_idol_started"
@@ -2277,13 +2512,41 @@
       ],
       "category": "player",
       "subtitle": ""
+    },
+    {
+      "name": "guardian_idol_started",
+      "files": [
+        "guardian_idol_started"
+      ],
+      "category": "player",
+      "subtitle": ""
+    },
+    {
+      "name": "guardian_idol_expires",
+      "files": [
+        "guardian_idol_expires"
+      ],
+      "category": "player",
+      "subtitle": ""
+    },
+    {
+      "name": "arthropods_idol_started",
+      "files": [
+        "arthropods_idol_started"
+      ],
+      "category": "player",
+      "subtitle": ""
+    },
+    {
+      "name": "arthropods_idol_expires",
+      "files": [
+        "arthropods_idol_expires"
+      ],
+      "category": "player",
+      "subtitle": ""
     }
   ],
   "tag_elements": {
-    "ITEMS:mod:ossified_ammonite_treasures": [
-      "Items.BONE",
-      "Items.GUNPOWDER"
-    ],
     "ITEMS:mod:bones": [
       "Items.BONE"
     ],
@@ -2297,12 +2560,6 @@
       "CUSTOM:ArcheoTrowel",
       "CUSTOM:ArcheoHammer"
     ],
-    "ITEMS:mod:petrified_ammonite_treasures": [
-      "Items.BEETROOT_SEEDS",
-      "Items.ROTTEN_FLESH",
-      "Blocks.BROWN_MUSHROOM",
-      "Blocks.RED_MUSHROOM"
-    ],
     "ITEMS:minecraft:music_discs": [
       "~CUSTOM:MusicDiscNameless"
     ],
@@ -2311,18 +2568,17 @@
       "CUSTOM:OssifiedAmmonite",
       "CUSTOM:ShinyAmmonite"
     ],
-    "ITEMS:mod:shiny_ammonite_treasures": [
-      "CUSTOM:PrimordialGoldFragment",
-      "Items.GOLD_INGOT",
-      "Items.EMERALD"
+    "BLOCKS:minecraft:beacon_base_blocks": [
+      "CUSTOM:PrimordialGoldBlock"
     ],
     "ITEMS:mod:mud_idols": [
       "CUSTOM:ExplosiveIdol",
       "CUSTOM:StrangeIdol",
-      "CUSTOM:PigmanIdol",
       "CUSTOM:SkeletalIdol",
       "CUSTOM:RottenIdol",
-      "CUSTOM:TraitorIdol"
+      "CUSTOM:TraitorIdol",
+      "CUSTOM:GuardianIdol",
+      "CUSTOM:ArthropodsIdol"
     ]
   },
   "tab_element_order": {
@@ -2333,21 +2589,23 @@
       "ArcheoHammer",
       "PrimordialGold",
       "PrimordialGoldFragment",
-      "PetrifiedAmmonite",
       "OssifiedAmmonite",
       "ShinyAmmonite",
-      "ExplosiveIdol",
+      "PetrifiedAmmonite",
+      "GuardianIdol",
+      "TraitorIdol",
+      "RottenIdol",
       "StrangeIdol",
       "SkeletalIdol",
-      "PigmanIdol",
-      "RottenIdol",
-      "TraitorIdol",
-      "BrokenSwordFragment",
-      "SwordOfUndying",
+      "ExplosiveIdol",
+      "ArthropodsIdol",
       "PrimitiveSpear",
       "SpearFragment",
+      "SwordOfUndying",
+      "BrokenSwordFragment",
       "MusicDiscNameless",
-      "DiscFragmentNameless"
+      "DiscFragmentNameless",
+      "PrimordialGoldBlock"
     ]
   },
   "language_map": {
@@ -2358,16 +2616,20 @@
       "subtitles.creeper_idol_started": "",
       "item.jaams_archeology.spear_fragment": "Spear Fragment",
       "subtitles.pigman_idol_started": "",
+      "effect.jaams_archeology.guardian_vigor": "Guardian Vigor",
       "item.jaams_archeology.archeo_trowel": "Archeo Trowel",
       "subtitles.piglin_idol_ends": "",
       "subtitles.piglin_idol_started": "",
       "subtitles.primitive_spear_hit": "Primitive Spear stabs",
       "subtitles.ammonite_fired": "Ammonite fired",
+      "effect.jaams_archeology.arthropods_vigor": "Arthropod\u0027s Vigor",
+      "item.jaams_archeology.arthropods_idol": "Arthropod\u0027s Idol",
       "subtitles.ammonite_breaks": "Ammonite breaks",
       "config.jaams_archeology.jaams_archeology_config": "jaams_archeology_common",
       "subtitles.skeleton_idol_started": "",
       "subtitles.spear_fragment_hit": "Spear Fragment stabs",
       "subtitles.rotten_idol_ends": "",
+      "item.jaams_archeology.guardian_idol": "Guardian Idol",
       "item.jaams_archeology.traitor_idol": "Traitor\u0027s Idol",
       "subtitles.primitive_spear_ground": "Primitive Spear hits",
       "item.jaams_archeology.explosive_idol": "Explosive Idol",
@@ -2380,8 +2642,10 @@
       "effect.jaams_archeology.rotten_vigor": "Rotten Vigor",
       "item.jaams_archeology.rotten_idol": "Rotten Idol",
       "effect.jaams_archeology.explosive_vigor": "Explosive Vigor",
+      "subtitles.arthropods_idol_started": "",
       "subtitles.spear_of_longinus_throw": "Spear of Longinus clangs",
       "effect.jaams_archeology.traitor_vigor": "Traitor\u0027s Vigor",
+      "block.jaams_archeology.primordial_gold_block": "Primordial Gold Block",
       "translation.tooltip.exposed": "Exposed",
       "subtitles.idol_breaks": "Mud Idol breaks",
       "item_group.jaams_archeology.archeology": "Jaam\u0027s Archeology",
@@ -2392,6 +2656,7 @@
       "subtitles.skeletal_idol_started": "",
       "subtitles.spear_fired": "Spear fired",
       "item.jaams_archeology.music_disc_nameless.desc": "jaamleeto - Nameless",
+      "subtitles.guardian_idol_expires": "",
       "item.jaams_archeology.primitive_spear": "Primitive Spear",
       "item.jaams_archeology.strange_idol": "Strange Idol",
       "subtitles.war_roar_axe_critical": "",
@@ -2407,15 +2672,14 @@
       "subtitles.rotten_idol_started": "",
       "item.jaams_archeology.sword_of_undying": "§eSword of Undying",
       "subtitles.explosive_idol_ends": "",
-      "effect.jaams_archeology.pigman_vigor": "Pigman\u0027s Vigor",
       "subtitles.spear_fragment_fired": "Spear Fragment Fired",
       "subtitles.enderman_idol_ends": "",
       "subtitles.traitor_idol_ends": "",
-      "item.jaams_archeology.pigman_idol": "Pigman\u0027s Idol",
       "subtitles.pigman_idol_ends": "",
       "effect.jaams_archeology.skeletal_vigor": "Skeletal Vigor",
       "item.jaams_archeology.magnifying_glass": "Magnifying Glass",
       "item.jaams_archeology.disc_fragment_nameless": "Disc Fragment",
+      "subtitles.guardian_idol_started": "",
       "subtitles.zombie_idol_started": "",
       "item.jaams_archeology.primordial_gold": "Primordial Gold",
       "subtitles.creeper_idol_ends": "",
@@ -2428,6 +2692,7 @@
       "item.jaams_archeology.music_disc_nameless": "Music Disc",
       "subtitles.spear_of_longinus_ground": "Spear of Longinus vibrates",
       "subtitles.skeleton_idol_ends": "",
+      "subtitles.arthropods_idol_expires": "",
       "subtitles.spear_fragment_ground": "Spear Fragment hits"
     }
   },
@@ -2503,38 +2768,47 @@
         "children": []
       },
       {
-        "name": "Events",
+        "name": "Custom Code",
         "children": []
       },
       {
         "name": "Loot Tables",
-        "children": []
+        "children": [
+          {
+            "name": "Tooltips",
+            "children": []
+          }
+        ]
       },
       {
         "name": "Idols Procedures",
         "children": [
           {
-            "name": "Zombie Idol",
+            "name": "Rotten Idol",
             "children": []
           },
           {
-            "name": "Skeleton Idol",
+            "name": "Skeletal Idol",
             "children": []
           },
           {
-            "name": "Illager Idol",
+            "name": "Traitor Idol",
             "children": []
           },
           {
-            "name": "Piglin Idol",
+            "name": "Explosive Idol",
             "children": []
           },
           {
-            "name": "Creeper Idol",
+            "name": "Strange Idol",
             "children": []
           },
           {
-            "name": "Enderman Idol",
+            "name": "Arthropod Idol",
+            "children": []
+          },
+          {
+            "name": "Guardian Idol",
             "children": []
           }
         ]
@@ -2544,11 +2818,15 @@
         "children": []
       },
       {
-        "name": "Tooltips",
+        "name": "Mixins",
         "children": []
       },
       {
-        "name": "Mixins",
+        "name": "Dispenser Behavior",
+        "children": []
+      },
+      {
+        "name": "Blocks",
         "children": []
       }
     ]
@@ -2567,6 +2845,7 @@
     "dependants": [],
     "mcreatorDependencies": [
       "configured",
+      "damage_indicator",
       "catalogue",
       "jei"
     ],

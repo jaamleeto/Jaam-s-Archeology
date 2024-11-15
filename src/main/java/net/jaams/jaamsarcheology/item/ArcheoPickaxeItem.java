@@ -152,6 +152,9 @@ public class ArcheoPickaxeItem extends PickaxeItem {
 	@Override
 	public void onUseTick(Level world, LivingEntity entityLiving, ItemStack stack, int count) {
 		if (entityLiving instanceof Player) {
+			if (entityLiving.isDeadOrDying() || entityLiving.isSpectator()) {
+				return;
+			}
 			Player player = (Player) entityLiving;
 			HitResult hitResult = calculateHitResult(entityLiving);
 			if (hitResult.getType() != HitResult.Type.BLOCK) {

@@ -21,12 +21,11 @@ import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.network.chat.Component;
+import net.minecraft.nbt.CompoundTag;
 
 import net.jaams.jaamsarcheology.procedures.SwordOfUndyingRightclickedProcedure;
 import net.jaams.jaamsarcheology.procedures.SwordOfUndyingLivingEntityIsHitWithToolProcedure;
-import net.jaams.jaamsarcheology.procedures.ItemInInventoryTickProcedure;
 import net.jaams.jaamsarcheology.init.JaamsArcheologyModItems;
-import net.jaams.jaamsarcheology.configuration.JaamsArcheologyCommonConfiguration;
 
 import java.util.List;
 
@@ -82,31 +81,20 @@ public class SwordOfUndyingItem extends SwordItem {
 	}
 
 	@Override
-	public InteractionResultHolder<ItemStack> use(Level world, Player entity, InteractionHand hand) {
+	public InteractionResultHolder<ItemStack> use(Level level, Player entity, InteractionHand hand) {
 		ItemStack itemStack = entity.getItemInHand(hand);
-		if (!world.isClientSide()) {
-			// Verificar si SWORDOFUNDYINGBLOCK está activo y "epicfight" no está cargado
-			if (JaamsArcheologyCommonConfiguration.SWORDOFUNDYINGBLOCK.get() && !ModList.get().isLoaded("epicfight")) {
-				// Si el jugador no está agachado, usar el ítem normalmente
-				if (!entity.isShiftKeyDown()) {
-					entity.startUsingItem(hand);
-					return new InteractionResultHolder<>(InteractionResult.CONSUME, itemStack);
-				}
-			} else if (!JaamsArcheologyCommonConfiguration.SWORDOFUNDYING.get()) {
-				// Si SWORDOFUNDYING está inactivo, pero SWORDOFUNDYINGBLOCK está activo, no usar el ítem
-				return new InteractionResultHolder<>(InteractionResult.FAIL, itemStack);
-			}
-			// Si el jugador está agachado y SWORDOFUNDYING está activo, ejecutar la lógica correspondiente
-			if (entity.isShiftKeyDown() && JaamsArcheologyCommonConfiguration.SWORDOFUNDYING.get()) {
-				InteractionResultHolder<ItemStack> ar = super.use(world, entity, hand);
-				SwordOfUndyingRightclickedProcedure.execute(world, entity.getX(), entity.getY(), entity.getZ(), entity, ar.getObject());
-				ar.getObject().hurtAndBreak(60, entity, (p_43388_) -> {
-					p_43388_.broadcastBreakEvent(entity.getUsedItemHand());
-				});
-				return ar;
-			}
+		if (!entity.isShiftKeyDown() && !ModList.get().isLoaded("epicfight")) {
+			entity.startUsingItem(hand);
+			return new InteractionResultHolder<>(InteractionResult.CONSUME, itemStack);
 		}
-		// Devolver el resultado por defecto si ninguna de las condiciones anteriores se cumple
+		if (entity.isShiftKeyDown()) {
+			InteractionResultHolder<ItemStack> ar = super.use(level, entity, hand);
+			SwordOfUndyingRightclickedProcedure.execute(level, entity.getX(), entity.getY(), entity.getZ(), entity, ar.getObject());
+			ar.getObject().hurtAndBreak(60, entity, (p_43388_) -> {
+				p_43388_.broadcastBreakEvent(entity.getUsedItemHand());
+			});
+			return ar;
+		}
 		return new InteractionResultHolder<>(InteractionResult.CONSUME, itemStack);
 	}
 
@@ -123,8 +111,7 @@ public class SwordOfUndyingItem extends SwordItem {
 	@NotNull
 	@Override
 	public AABB getSweepHitBox(@NotNull ItemStack stack, @NotNull Player player, @NotNull Entity target) {
-		// Customize the sweep attack hitbox
-		return target.getBoundingBox().inflate(2.0D, 0.25D, 2.0D); // Increase the range of the sweep attack
+		return target.getBoundingBox().inflate(2.0D, 0.25D, 2.0D);
 	}
 
 	@Override
@@ -132,7 +119,13 @@ public class SwordOfUndyingItem extends SwordItem {
 		super.inventoryTick(itemstack, world, entity, slot, selected);
 		if (entity instanceof Player) {
 			Player player = (Player) entity;
-			ItemInInventoryTickProcedure.execute(itemstack, player);
+			CompoundTag tag = itemstack.getOrCreateTag();
+			boolean isUsing = player.isUsingItem() && player.getUseItem() == itemstack;
+			if (isUsing) {
+				tag.putInt("CustomModelData", 1);
+			} else {
+				tag.putInt("CustomModelData", 0);
+			}
 		}
 	}
 }

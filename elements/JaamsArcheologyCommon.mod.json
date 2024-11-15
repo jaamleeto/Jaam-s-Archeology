@@ -143,10 +143,10 @@
             "block": {
               "value": ""
             },
-            "logicField": 0,
+            "logicField": 1,
             "numberField": 0.0,
             "textDefault": "",
-            "comment": "",
+            "comment": "Projectile drop as item when despawn",
             "vardisplay": "Projectile Drop As Item",
             "varname": "dropasitem",
             "enablecomment": false,
@@ -166,6 +166,23 @@
             "comment": "",
             "vardisplay": "Ammonites Drops Items",
             "varname": "ammonitedrops",
+            "enablecomment": false,
+            "stringlist": []
+          },
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 0,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 0.0,
+            "textDefault": "",
+            "comment": "Projectile drop as item when touch lava",
+            "vardisplay": "Projectile Drop As Item In Lava",
+            "varname": "dropasitemlava",
             "enablecomment": false,
             "stringlist": []
           }

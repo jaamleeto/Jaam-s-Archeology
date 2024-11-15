@@ -23,7 +23,6 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.util.RandomSource;
-import net.minecraft.tags.TagKey;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundEvent;
@@ -33,21 +32,20 @@ import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.particles.ItemParticleOption;
-import net.minecraft.core.Holder;
 
+import net.jaams.jaamsarcheology.util.WeightedItem;
 import net.jaams.jaamsarcheology.init.JaamsArcheologyModItems;
 import net.jaams.jaamsarcheology.init.JaamsArcheologyModEntities;
 import net.jaams.jaamsarcheology.configuration.JaamsArcheologyCommonConfiguration;
 
 import javax.annotation.Nullable;
 
-import java.util.stream.StreamSupport;
 import java.util.stream.Collectors;
 import java.util.Random;
 import java.util.List;
+import java.util.ArrayList;
 
 public class AmmoniteProjectileEntity extends AbstractArrow implements IEntityAdditionalSpawnData {
 	public ItemStack ammoniteItem;
@@ -56,9 +54,6 @@ public class AmmoniteProjectileEntity extends AbstractArrow implements IEntityAd
 	@Nullable
 	private BlockState lastState;
 	SoundEvent breaks = ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("jaams_archeology:ammonite_breaks"));
-	private static final TagKey<Item> SHINY_AMMONITE_DROPS_TAG = TagKey.create(BuiltInRegistries.ITEM.key(), new ResourceLocation("jaams_archeology", "shiny_ammonite_treasures"));
-	private static final TagKey<Item> PETRIFIED_AMMONITE_DROPS_TAG = TagKey.create(BuiltInRegistries.ITEM.key(), new ResourceLocation("jaams_archeology", "petrified_ammonite_treasures"));
-	private static final TagKey<Item> OSSIFIED_AMMONITE_DROPS_TAG = TagKey.create(BuiltInRegistries.ITEM.key(), new ResourceLocation("jaams_archeology", "ossified_ammonite_treasures"));
 
 	public AmmoniteProjectileEntity(PlayMessages.SpawnEntity packet, Level world) {
 		super(JaamsArcheologyModEntities.AMMONITE_PROJECTILE.get(), world);
@@ -118,19 +113,15 @@ public class AmmoniteProjectileEntity extends AbstractArrow implements IEntityAd
 
 	@Override
 	protected @NotNull ItemStack getPickupItem() {
-		return new ItemStack(this.ammoniteItem.getItem(), 1);
-	}
-
-	@Override
-	protected void doPostHurtEffects(LivingEntity entity) {
-		super.doPostHurtEffects(entity);
-		entity.setArrowCount(entity.getArrowCount() - 1);
+		ItemStack itemStack = this.ammoniteItem.copy();
+		itemStack.setCount(1);
+		return itemStack;
 	}
 
 	@Override
 	public void onHitBlock(BlockHitResult blockHitResult) {
-		this.lastState = this.level().getBlockState(blockHitResult.getBlockPos()); // Corrected variable
-		Vec3 vec3 = blockHitResult.getLocation().subtract(this.getX(), this.getY(), this.getZ()); // Corrected variable
+		this.lastState = this.level().getBlockState(blockHitResult.getBlockPos());
+		Vec3 vec3 = blockHitResult.getLocation().subtract(this.getX(), this.getY(), this.getZ());
 		this.setDeltaMovement(vec3);
 		Vec3 vec31 = vec3.normalize().scale((double) 0.05F);
 		this.setPosRaw(this.getX() - vec31.x, this.getY() - vec31.y, this.getZ() - vec31.z);
@@ -142,29 +133,27 @@ public class AmmoniteProjectileEntity extends AbstractArrow implements IEntityAd
 		this.setShotFromCrossbow(false);
 		if (blockHitResult.getType() == BlockHitResult.Type.BLOCK) {
 			if (!level().isClientSide) {
-				// Use the exact hit position
 				double posX = blockHitResult.getLocation().x();
 				double posY = blockHitResult.getLocation().y();
 				double posZ = blockHitResult.getLocation().z();
-				ItemStack itemStack = this.ammoniteItem; // Create ItemStack using the constructor
-				// Spawn item particles at the exact hit position
+				ItemStack itemStack = this.ammoniteItem;
 				((ServerLevel) level()).sendParticles(new ItemParticleOption(ParticleTypes.ITEM, itemStack), posX, posY, posZ, 15, 0.1d, 0.1d, 0.1d, 0.05d);
 			}
 		}
 		this.playSound(breaks, 0.5F, 1.0F);
 		if (ammoniteItem.getItem() == JaamsArcheologyModItems.SHINY_AMMONITE.get()) {
 			if (Math.random() < 0.7) {
-				ShinyRandomItemFromTag();
+				ShinyRandomItemFromList();
 			}
 		}
 		if (ammoniteItem.getItem() == JaamsArcheologyModItems.PETRIFIED_AMMONITE.get()) {
 			if (Math.random() < 0.7) {
-				PetrifiedRandomItemFromTag();
+				PetrifiedRandomItemFromList();
 			}
 		}
 		if (ammoniteItem.getItem() == JaamsArcheologyModItems.OSSIFIED_AMMONITE.get()) {
 			if (Math.random() < 0.5) {
-				OssifiedRandomItemFromTag();
+				OssifiedRandomItemFromList();
 			}
 		}
 		this.discard();
@@ -183,43 +172,49 @@ public class AmmoniteProjectileEntity extends AbstractArrow implements IEntityAd
 	public void onHitEntity(EntityHitResult entityHitResult) {
 		Entity entity = entityHitResult.getEntity();
 		boolean isEnderman = entity.getType() == EntityType.ENDERMAN;
-		// Retrieve the owner of the projectile
 		Entity owner = this.getOwner();
-		// Check if the owner is a player in creative mode
 		if (owner instanceof Player && ((Player) owner).isCreative()) {
 			this.discard();
 		}
 		if (this.isOnFire() && !isEnderman) {
 			entity.setSecondsOnFire(5);
 		}
-		if (entity instanceof LivingEntity) {
+		if (entity instanceof LivingEntity livingEntity) {
+			if (livingEntity.isBlocking()) {
+				applyAmmoniteLogic();
+				this.discard();
+				return;
+			}
 			super.onHitEntity(entityHitResult);
 		} else {
-			this.setDeltaMovement(this.getDeltaMovement().multiply(-0.02D, -0.2D, -0.02D));
 			entity.hurt(this.damageSources().generic(), (float) 10);
+			applyAmmoniteLogic();
+			this.discard();
 		}
-		if (!level().isClientSide) {
-			if ((entity instanceof LivingEntity)) {
-				ItemStack itemStack = this.ammoniteItem; // Create ItemStack using the constructor
-				if (!itemStack.isEmpty()) { // Ensure itemStack is not empty
-					((ServerLevel) level()).sendParticles(new ItemParticleOption(ParticleTypes.ITEM, itemStack), getX(), getY(), getZ(), 5, 0.1d, 0.1d, 0.1d, 0.05d);
-				}
+		applyAmmoniteLogic();
+	}
+
+	private void applyAmmoniteLogic() {
+		this.playSound(breaks, 0.5F, 1.0F);
+		if (!level().isClientSide && !this.ammoniteItem.isEmpty()) {
+			ItemStack itemStack = this.ammoniteItem;
+			if (!itemStack.isEmpty()) {
+				((ServerLevel) level()).sendParticles(new ItemParticleOption(ParticleTypes.ITEM, itemStack), getX(), getY(), getZ(), 5, 0.1d, 0.1d, 0.1d, 0.05d);
 			}
 		}
-		this.playSound(breaks, 0.5F, 1.0F);
 		if (ammoniteItem.getItem() == JaamsArcheologyModItems.SHINY_AMMONITE.get()) {
 			if (Math.random() < 0.7) {
-				ShinyRandomItemFromTag();
+				ShinyRandomItemFromList();
 			}
 		}
 		if (ammoniteItem.getItem() == JaamsArcheologyModItems.PETRIFIED_AMMONITE.get()) {
 			if (Math.random() < 0.7) {
-				PetrifiedRandomItemFromTag();
+				PetrifiedRandomItemFromList();
 			}
 		}
 		if (ammoniteItem.getItem() == JaamsArcheologyModItems.OSSIFIED_AMMONITE.get()) {
 			if (Math.random() < 0.5) {
-				OssifiedRandomItemFromTag();
+				OssifiedRandomItemFromList();
 			}
 		}
 	}
@@ -234,52 +229,49 @@ public class AmmoniteProjectileEntity extends AbstractArrow implements IEntityAd
 	public void tick() {
 		if (this.level().isClientSide && this.isInWater() && !this.inGround) {
 			bubbleTime++;
-			if (bubbleTime <= 200) { // 5 seconds * 20 ticks per second
+			if (bubbleTime <= 200) {
 				this.level().addParticle(ParticleTypes.BUBBLE, this.getX(), this.getY(), this.getZ(), 0.0D, 0.0D, 0.0D);
 			}
 		} else {
-			bubbleTime = 0; // reset bubble time if not in water
+			bubbleTime = 0;
 		}
 		if (this.inGroundTime > 1 && !hasImpacted) {
 			this.hasImpacted = true;
 			this.ticksSpinning = 0;
 		}
-		// Always increment spin ticks unless impacted
 		if (!hasImpacted) {
 			ticksSpinning++;
 		}
 		if (this.isInLava()) {
 			this.discard();
 		}
-		// Check for collisions with other projectiles
 		List<Entity> collidingEntities = this.level().getEntitiesOfClass(Entity.class, this.getBoundingBox());
 		List<Entity> collidingProjectiles = collidingEntities.stream().filter(entity -> entity instanceof Projectile && entity != this).collect(Collectors.toList());
 		for (Entity projectile : collidingProjectiles) {
-			// Trigger the break action
 			if (ammoniteItem.getItem() == JaamsArcheologyModItems.SHINY_AMMONITE.get()) {
 				if (Math.random() < 0.9) {
-					ShinyRandomItemFromTag();
+					ShinyRandomItemFromList();
 				}
 			}
 			if (ammoniteItem.getItem() == JaamsArcheologyModItems.PETRIFIED_AMMONITE.get()) {
 				if (Math.random() < 0.9) {
-					PetrifiedRandomItemFromTag();
+					PetrifiedRandomItemFromList();
 				}
 			}
 			if (ammoniteItem.getItem() == JaamsArcheologyModItems.OSSIFIED_AMMONITE.get()) {
 				if (Math.random() < 0.7) {
-					OssifiedRandomItemFromTag();
+					OssifiedRandomItemFromList();
 				}
 			}
 			breakProjectile();
-			return; // Exit the loop early as we only need to break once
+			return;
 		}
 		super.tick();
 	}
 
 	private void breakProjectile() {
 		if (!level().isClientSide) {
-			ItemStack itemStack = this.ammoniteItem; // Create ItemStack using the constructor
+			ItemStack itemStack = this.ammoniteItem;
 			((ServerLevel) level()).sendParticles(new ItemParticleOption(ParticleTypes.ITEM, itemStack), getX(), getY(), getZ(), 15, 0.1d, 0.1d, 0.1d, 0.05d);
 		}
 		this.playSound(breaks, 0.5F, 1.0F);
@@ -303,49 +295,76 @@ public class AmmoniteProjectileEntity extends AbstractArrow implements IEntityAd
 		return this.ticksSpinning;
 	}
 
-	private void ShinyRandomItemFromTag() {
-		if (JaamsArcheologyCommonConfiguration.AMMONITEDROPS.get() == true) {
+	private void ShinyRandomItemFromList() {
+		if (JaamsArcheologyCommonConfiguration.AMMONITEDROPS.get()) {
 			if (!level().isClientSide && level() instanceof ServerLevel serverLevel) {
-				List<Item> items = StreamSupport.stream(BuiltInRegistries.ITEM.getTagOrEmpty(SHINY_AMMONITE_DROPS_TAG).spliterator(), false).map(Holder::value).collect(Collectors.toList());
+				List<WeightedItem> items = parseWeightedItems(JaamsArcheologyCommonConfiguration.SHINY_AMMONITE_ITEMS.get());
 				if (!items.isEmpty()) {
-					Random random = new Random();
-					Item randomItem = items.get(random.nextInt(items.size()));
-					ItemStack itemStack = new ItemStack(randomItem);
-					ItemEntity itemEntity = new ItemEntity(serverLevel, this.getX(), this.getY(), this.getZ(), itemStack);
+					ItemStack randomItem = getRandomWeightedItem(items);
+					ItemEntity itemEntity = new ItemEntity(serverLevel, this.getX(), this.getY(), this.getZ(), randomItem);
 					serverLevel.addFreshEntity(itemEntity);
 				}
 			}
 		}
 	}
 
-	private void PetrifiedRandomItemFromTag() {
-		if (JaamsArcheologyCommonConfiguration.AMMONITEDROPS.get() == true) {
+	private void PetrifiedRandomItemFromList() {
+		if (JaamsArcheologyCommonConfiguration.AMMONITEDROPS.get()) {
 			if (!level().isClientSide && level() instanceof ServerLevel serverLevel) {
-				List<Item> items = StreamSupport.stream(BuiltInRegistries.ITEM.getTagOrEmpty(PETRIFIED_AMMONITE_DROPS_TAG).spliterator(), false).map(Holder::value).collect(Collectors.toList());
+				List<WeightedItem> items = parseWeightedItems(JaamsArcheologyCommonConfiguration.PETRIFIED_AMMONITE_ITEMS.get());
 				if (!items.isEmpty()) {
-					Random random = new Random();
-					Item randomItem = items.get(random.nextInt(items.size()));
-					ItemStack itemStack = new ItemStack(randomItem);
-					ItemEntity itemEntity = new ItemEntity(serverLevel, this.getX(), this.getY(), this.getZ(), itemStack);
+					ItemStack randomItem = getRandomWeightedItem(items);
+					ItemEntity itemEntity = new ItemEntity(serverLevel, this.getX(), this.getY(), this.getZ(), randomItem);
 					serverLevel.addFreshEntity(itemEntity);
 				}
 			}
 		}
 	}
 
-	private void OssifiedRandomItemFromTag() {
-		if (JaamsArcheologyCommonConfiguration.AMMONITEDROPS.get() == true) {
+	private void OssifiedRandomItemFromList() {
+		if (JaamsArcheologyCommonConfiguration.AMMONITEDROPS.get()) {
 			if (!level().isClientSide && level() instanceof ServerLevel serverLevel) {
-				List<Item> items = StreamSupport.stream(BuiltInRegistries.ITEM.getTagOrEmpty(OSSIFIED_AMMONITE_DROPS_TAG).spliterator(), false).map(Holder::value).collect(Collectors.toList());
+				List<WeightedItem> items = parseWeightedItems(JaamsArcheologyCommonConfiguration.OSSIFIED_AMMONITE_ITEMS.get());
 				if (!items.isEmpty()) {
-					Random random = new Random();
-					Item randomItem = items.get(random.nextInt(items.size()));
-					ItemStack itemStack = new ItemStack(randomItem);
-					ItemEntity itemEntity = new ItemEntity(serverLevel, this.getX(), this.getY(), this.getZ(), itemStack);
+					ItemStack randomItem = getRandomWeightedItem(items);
+					ItemEntity itemEntity = new ItemEntity(serverLevel, this.getX(), this.getY(), this.getZ(), randomItem);
 					serverLevel.addFreshEntity(itemEntity);
 				}
 			}
 		}
+	}
+
+	private List<WeightedItem> parseWeightedItems(List<? extends String> configList) {
+		List<WeightedItem> items = new ArrayList<>();
+		for (String entry : configList) {
+			String[] parts = entry.split(",\\s*weight:");
+			String itemId = parts[0].trim();
+			float weight = 1.0f;
+			if (parts.length > 1) {
+				try {
+					weight = Float.parseFloat(parts[1].trim());
+				} catch (NumberFormatException e) {
+					e.printStackTrace();
+				}
+			}
+			Item item = ForgeRegistries.ITEMS.getValue(new ResourceLocation(itemId));
+			if (item != null) {
+				items.add(new WeightedItem(new ItemStack(item), weight));
+			}
+		}
+		return items;
+	}
+
+	private ItemStack getRandomWeightedItem(List<WeightedItem> items) {
+		float totalWeight = (float) items.stream().mapToDouble(WeightedItem::getWeight).sum();
+		float randomValue = new Random().nextFloat() * totalWeight;
+		for (WeightedItem item : items) {
+			randomValue -= item.getWeight();
+			if (randomValue <= 0) {
+				return item.getItem().copy();
+			}
+		}
+		return ItemStack.EMPTY;
 	}
 
 	public static AmmoniteProjectileEntity shoot(Level world, LivingEntity entity, RandomSource source) {

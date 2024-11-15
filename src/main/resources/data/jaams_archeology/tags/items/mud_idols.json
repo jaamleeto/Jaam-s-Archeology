@@ -3,9 +3,10 @@
   "values": [
     "jaams_archeology:explosive_idol",
     "jaams_archeology:strange_idol",
-    "jaams_archeology:pigman_idol",
     "jaams_archeology:skeletal_idol",
     "jaams_archeology:rotten_idol",
-    "jaams_archeology:traitor_idol"
+    "jaams_archeology:traitor_idol",
+    "jaams_archeology:guardian_idol",
+    "jaams_archeology:arthropods_idol"
   ]
 }

@@ -30,19 +30,14 @@ public class SpearFragmentProjectileRenderer extends EntityRenderer<SpearFragmen
 	@Override
 	public void render(SpearFragmentProjectileEntity entity, float entityYaw, float partialTicks, PoseStack matrixStack, MultiBufferSource buffer, int packedLight) {
 		matrixStack.pushPose();
-		// Scale the entity
 		final float SCALE_FACTOR = JaamsArcheologyClientConfiguration.SPEARFRAGMENTSIZE.get().floatValue();
 		matrixStack.scale(SCALE_FACTOR, SCALE_FACTOR, SCALE_FACTOR);
-		// Apply rotations based on the entity's orientation
 		matrixStack.mulPose(Axis.YP.rotationDegrees(Mth.lerp(partialTicks, entity.yRotO, entity.getYRot()) - 90.0F));
 		matrixStack.mulPose(Axis.ZP.rotationDegrees(Mth.lerp(partialTicks, entity.xRotO, entity.getXRot())));
 		matrixStack.mulPose(Axis.ZP.rotationDegrees(-135.0F));
 		matrixStack.mulPose(Axis.YP.rotationDegrees(180.0F));
-		// Adjust translation to position the spear correctly
 		matrixStack.translate(0.0F, -0.175F, 0.0F);
-		// Get the item renderer instance
 		ItemRenderer itemRenderer = Minecraft.getInstance().getItemRenderer();
-		// Render the spear item with appropriate transformation and overlay settings
 		itemRenderer.renderStatic(entity.weaponItem, ItemDisplayContext.GROUND, packedLight, OverlayTexture.NO_OVERLAY, matrixStack, buffer, entity.level(), entity.getId());
 		matrixStack.popPose();
 		super.render(entity, entityYaw, partialTicks, matrixStack, buffer, packedLight);

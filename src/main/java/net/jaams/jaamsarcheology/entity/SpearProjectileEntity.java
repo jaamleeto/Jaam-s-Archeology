@@ -21,10 +21,12 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.server.level.ServerPlayer;
@@ -38,6 +40,7 @@ import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.core.particles.ItemParticleOption;
 import net.minecraft.core.particles.BlockParticleOption;
 
 import net.jaams.jaamsarcheology.init.JaamsArcheologyModEntities;
@@ -76,11 +79,11 @@ public class SpearProjectileEntity extends AbstractArrow implements IEntityAddit
 		super(type, entity, world);
 	}
 
-	public SpearProjectileEntity(Level world, Player player, ItemStack item) {
+	public SpearProjectileEntity(Level world, Player player, ItemStack weaponItem) {
 		super(JaamsArcheologyModEntities.SPEAR_PROJECTILE.get(), player, world);
-		this.weaponItem = item.copy();
-		this.entityData.set(ID_LOYALTY, (byte) EnchantmentHelper.getLoyalty(item));
-		this.entityData.set(ID_FOIL, item.hasFoil());
+		this.weaponItem = weaponItem.copy();
+		this.entityData.set(ID_LOYALTY, (byte) EnchantmentHelper.getLoyalty(weaponItem));
+		this.entityData.set(ID_FOIL, weaponItem.hasFoil());
 	}
 
 	protected void defineSynchedData() {
@@ -138,13 +141,15 @@ public class SpearProjectileEntity extends AbstractArrow implements IEntityAddit
 
 	@Override
 	protected @NotNull ItemStack getPickupItem() {
-		return this.weaponItem.copy();
+		ItemStack itemStack = this.weaponItem.copy();
+		itemStack.setCount(1);
+		return itemStack;
 	}
 
 	@Override
 	public void onHitBlock(BlockHitResult blockHitResult) {
-		this.lastState = this.level().getBlockState(blockHitResult.getBlockPos()); // Corrected variable
-		Vec3 vec3 = blockHitResult.getLocation().subtract(this.getX(), this.getY(), this.getZ()); // Corrected variable
+		this.lastState = this.level().getBlockState(blockHitResult.getBlockPos());
+		Vec3 vec3 = blockHitResult.getLocation().subtract(this.getX(), this.getY(), this.getZ());
 		this.setDeltaMovement(vec3);
 		Vec3 vec31 = vec3.normalize().scale((double) 0.05F);
 		this.setPosRaw(this.getX() - vec31.x, this.getY() - vec31.y, this.getZ() - vec31.z);
@@ -177,43 +182,40 @@ public class SpearProjectileEntity extends AbstractArrow implements IEntityAddit
 	@Override
 	protected void onHitEntity(EntityHitResult entityHitResult) {
 		Entity entity = entityHitResult.getEntity();
-		float f = 4.0F + this.weaponDamage;
-		if (entity instanceof LivingEntity livingentity) {
-			f += EnchantmentHelper.getDamageBonus(this.weaponItem, livingentity.getMobType());
+		float damage = 4.0F;
+		if (entity instanceof LivingEntity livingEntity) {
+			damage += EnchantmentHelper.getDamageBonus(this.weaponItem, livingEntity.getMobType());
 		}
-		Entity entity1 = this.getOwner();
-		DamageSource damagesource = this.damageSources().trident(this, (Entity) (entity1 == null ? this : entity1));
-		this.dealtDamage = true;
-		if (entity.hurt(damagesource, f)) {
+		Entity owner = this.getOwner();
+		DamageSource damageSource = this.damageSources().trident(this, (owner == null ? this : owner));
+		if (entity.hurt(damageSource, damage)) {
 			if (entity.getType() == EntityType.ENDERMAN) {
 				return;
 			}
-			if (entity instanceof LivingEntity) {
-				LivingEntity livingentity1 = (LivingEntity) entity;
-				if (entity1 instanceof LivingEntity) {
-					EnchantmentHelper.doPostHurtEffects(livingentity1, entity1);
-					EnchantmentHelper.doPostDamageEffects((LivingEntity) entity1, livingentity1);
+			if (entity instanceof LivingEntity hitLivingEntity) {
+				if (owner instanceof LivingEntity livingOwner) {
+					EnchantmentHelper.doPostHurtEffects(hitLivingEntity, livingOwner);
+					EnchantmentHelper.doPostDamageEffects(livingOwner, hitLivingEntity);
 				}
-				this.doPostHurtEffects(livingentity1);
+				this.doPostHurtEffects(hitLivingEntity);
 			}
 		}
+		this.setDeltaMovement(this.getDeltaMovement().multiply(-0.01D, -0.1D, -0.01D));
 		this.hasImpacted = true;
-		this.setDeltaMovement(this.getDeltaMovement().multiply(-0.02D, -0.2D, -0.02D));
+		this.dealtDamage = true;
 		this.playSound(hit, 1.0F, 1.0F);
 	}
 
 	@Override
 	protected void doPostHurtEffects(LivingEntity livingentity) {
 		super.doPostHurtEffects(livingentity);
-		// Fire Aspect enchantment effect
 		int fireAspectLevel = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.FIRE_ASPECT, this.weaponItem);
 		if (fireAspectLevel > 0) {
 			livingentity.setSecondsOnFire(fireAspectLevel * 4);
 		}
-		// Knockback enchantment effect
 		int knockbackLevel = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.KNOCKBACK, this.weaponItem);
 		if (knockbackLevel > 0) {
-			double knockbackStrength = knockbackLevel * 1; // Adjust as necessary
+			double knockbackStrength = knockbackLevel * 1;
 			double motionX = livingentity.getX() - this.getX();
 			double motionY = livingentity.getY() - this.getY();
 			double motionZ = livingentity.getZ() - this.getZ();
@@ -230,13 +232,14 @@ public class SpearProjectileEntity extends AbstractArrow implements IEntityAddit
 
 	@Override
 	public void tick() {
+		super.tick();
 		if (this.level().isClientSide && this.isInWater() && !this.inGround) {
 			bubbleTime++;
-			if (bubbleTime <= 200) { // 5 seconds * 20 ticks per second
+			if (bubbleTime <= 200) {
 				this.level().addParticle(ParticleTypes.BUBBLE, this.getX(), this.getY(), this.getZ(), 0.0D, 0.0D, 0.0D);
 			}
 		} else {
-			bubbleTime = 0; // reset bubble time if not in water
+			bubbleTime = 0;
 		}
 		if (this.inGroundTime > 4) {
 			this.dealtDamage = true;
@@ -247,9 +250,11 @@ public class SpearProjectileEntity extends AbstractArrow implements IEntityAddit
 		if (!hasImpacted) {
 			ticksSpinning++;
 		}
-		if (this.isInLava()) {
-			dropAsItem();
-			this.discard();
+		if (JaamsArcheologyCommonConfiguration.DROPASITEMLAVA.get() == true) {
+			if (this.isInLava()) {
+				dropAsItem();
+				this.discard();
+			}
 		}
 		Entity entity = this.getOwner();
 		int i = this.entityData.get(ID_LOYALTY);
@@ -274,7 +279,19 @@ public class SpearProjectileEntity extends AbstractArrow implements IEntityAddit
 				++this.clientSideReturnTridentTickCount;
 			}
 		}
-		super.tick();
+		if (this.inGround && this.getOwner() instanceof Mob mobOwner) {
+			double pickupRange = 1.5D;
+			if (this.position().distanceTo(mobOwner.position()) <= pickupRange) {
+				ItemStack pickupItemStack = this.weaponItem.copy();
+				pickupItemStack.setCount(1);
+				boolean canPickup = (mobOwner.getItemInHand(InteractionHand.MAIN_HAND).isEmpty() || mobOwner.getItemInHand(InteractionHand.OFF_HAND).isEmpty()
+						|| (mobOwner.getItemInHand(InteractionHand.MAIN_HAND).is(pickupItemStack.getItem()) && mobOwner.getItemInHand(InteractionHand.MAIN_HAND).getCount() < mobOwner.getItemInHand(InteractionHand.MAIN_HAND).getMaxStackSize())
+						|| (mobOwner.getItemInHand(InteractionHand.OFF_HAND).is(pickupItemStack.getItem()) && mobOwner.getItemInHand(InteractionHand.OFF_HAND).getCount() < mobOwner.getItemInHand(InteractionHand.OFF_HAND).getMaxStackSize()));
+				if (canPickup && tryPickup(mobOwner)) {
+					this.discard();
+				}
+			}
+		}
 	}
 
 	int life = 0;
@@ -283,19 +300,56 @@ public class SpearProjectileEntity extends AbstractArrow implements IEntityAddit
 	protected void tickDespawn() {
 		life++;
 		if (life >= JaamsArcheologyCommonConfiguration.PRIMITIVESPEARDESPAWN.get()) {
-			if (JaamsArcheologyCommonConfiguration.DROPASITEM.get() == true) {
+			if (JaamsArcheologyCommonConfiguration.DROPASITEM.get() && this.pickup != AbstractArrow.Pickup.CREATIVE_ONLY) {
 				dropAsItem();
+			} else {
+				if (!this.level().isClientSide) {
+					ItemStack itemStack = this.weaponItem.copy();
+					if (!itemStack.isEmpty()) {
+						((ServerLevel) this.level()).sendParticles(new ItemParticleOption(ParticleTypes.ITEM, itemStack), getX(), getY() + 0.5, getZ(), 5, 0.1d, 0.1d, 0.1d, 0.05d);
+					}
+				}
 			}
 			discard();
 		}
 	}
 
 	protected void dropAsItem() {
-		ItemStack itemToSpawn = this.weaponItem.copy();
-		itemToSpawn.setCount(1); // Correct way to set the count to 1
-		ItemEntity entityToSpawn = new ItemEntity(this.level(), this.getX(), this.getY(), this.getZ(), itemToSpawn);
-		entityToSpawn.setPickUpDelay(10);
-		this.level().addFreshEntity(entityToSpawn);
+		if (this.getOwner() instanceof ServerPlayer) {
+			ItemStack itemToSpawn = this.weaponItem.copy();
+			itemToSpawn.setCount(1);
+			ItemEntity entityToSpawn = new ItemEntity(this.level(), this.getX(), this.getY(), this.getZ(), itemToSpawn);
+			entityToSpawn.setPickUpDelay(10);
+			this.level().addFreshEntity(entityToSpawn);
+		}
+	}
+
+	protected boolean tryPickup(LivingEntity entity) {
+		if (entity instanceof Player player) {
+			return super.tryPickup(player);
+		} else if (entity instanceof Mob mob) {
+			ItemStack pickupItemStack = this.weaponItem.copy();
+			pickupItemStack.setCount(1);
+			ItemStack mainHandStack = mob.getItemInHand(InteractionHand.MAIN_HAND);
+			ItemStack offHandStack = mob.getItemInHand(InteractionHand.OFF_HAND);
+			if (!mainHandStack.isEmpty() && mainHandStack.is(pickupItemStack.getItem()) && mainHandStack.getCount() < mainHandStack.getMaxStackSize()) {
+				mainHandStack.grow(pickupItemStack.getCount());
+				return true;
+			}
+			if (!offHandStack.isEmpty() && offHandStack.is(pickupItemStack.getItem()) && offHandStack.getCount() < offHandStack.getMaxStackSize()) {
+				offHandStack.grow(pickupItemStack.getCount());
+				return true;
+			}
+			if (mainHandStack.isEmpty()) {
+				mob.setItemInHand(InteractionHand.MAIN_HAND, pickupItemStack);
+				return true;
+			}
+			if (offHandStack.isEmpty()) {
+				mob.setItemInHand(InteractionHand.OFF_HAND, pickupItemStack);
+				return true;
+			}
+		}
+		return false;
 	}
 
 	@Override
@@ -314,10 +368,6 @@ public class SpearProjectileEntity extends AbstractArrow implements IEntityAddit
 
 	public boolean isFoil() {
 		return this.entityData.get(ID_FOIL);
-	}
-
-	protected boolean tryPickup(Player player) {
-		return super.tryPickup(player) || this.isNoPhysics() && this.ownedBy(player) && player.getInventory().add(this.getPickupItem());
 	}
 
 	public boolean hasImpacted() {

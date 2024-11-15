@@ -3,6 +3,7 @@ package net.jaams.jaamsarcheology.item;
 
 import org.jetbrains.annotations.NotNull;
 
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.common.ToolActions;
 
 import net.minecraft.world.phys.AABB;
@@ -23,10 +24,8 @@ import net.minecraft.network.chat.TextColor;
 import net.minecraft.network.chat.Component;
 import net.minecraft.nbt.CompoundTag;
 
-import net.jaams.jaamsarcheology.procedures.ItemInInventoryTickProcedure;
 import net.jaams.jaamsarcheology.init.JaamsArcheologyModItems;
-import net.jaams.jaamsarcheology.configuration.JaamsArcheologyCommonConfiguration;
-import net.jaams.jaamsarcheology.IDyeableItem;
+import net.jaams.jaamsarcheology.dyeable.IDyeableItem;
 
 import java.util.List;
 
@@ -72,22 +71,24 @@ public class BrokenSwordFragmentItem extends SwordItem implements IDyeableItem {
 	@Override
 	public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
 		super.inventoryTick(itemstack, world, entity, slot, selected);
-		if (entity instanceof Player) {
-			Player player = (Player) entity;
-			ItemInInventoryTickProcedure.execute(itemstack, player);
-			CompoundTag tag = itemstack.getOrCreateTag();
-			double deflectAmount = tag.getDouble("DeflectAmount");
-			// Verificar el valor de DeflectAmount y cambiar el color del item
-			if (deflectAmount > 20) {
-				((IDyeableItem) itemstack.getItem()).setColor(itemstack, 0xFF0000); // Rojo
-			} else if (deflectAmount > 10) {
-				((IDyeableItem) itemstack.getItem()).setColor(itemstack, 0xFFA500); // Naranja
-			} else if (deflectAmount > 1) {
-				((IDyeableItem) itemstack.getItem()).setColor(itemstack, 0xFFFF00); // Amarillo
-			} else {
-				// Establece el color predeterminado si el valor es 0 o menor
-				((IDyeableItem) itemstack.getItem()).setColor(itemstack, 0xFF44CC44); // Color original
-			}
+		Player player = (Player) entity;
+		CompoundTag tag = itemstack.getOrCreateTag();
+		boolean isUsing = player.isUsingItem() && player.getUseItem() == itemstack;
+		if (isUsing) {
+			tag.putInt("CustomModelData", 1);
+		} else {
+			tag.putInt("CustomModelData", 0);
+		}
+		double deflectAmount = tag.getDouble("DeflectAmount");
+		// Verificar el valor de DeflectAmount y cambiar el color del item
+		if (deflectAmount > 20) {
+			((IDyeableItem) itemstack.getItem()).setColor(itemstack, 0xFF0000); // Rojo
+		} else if (deflectAmount > 10) {
+			((IDyeableItem) itemstack.getItem()).setColor(itemstack, 0xFFA500); // Naranja
+		} else if (deflectAmount > 1) {
+			((IDyeableItem) itemstack.getItem()).setColor(itemstack, 0xFFFF00); // Amarillo
+		} else {
+			((IDyeableItem) itemstack.getItem()).setColor(itemstack, 0xFF44CC44); // Color original
 		}
 	}
 
@@ -95,7 +96,6 @@ public class BrokenSwordFragmentItem extends SwordItem implements IDyeableItem {
 	public void appendHoverText(ItemStack itemstack, Level world, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, world, list, flag);
 		double deflectAmount = itemstack.getOrCreateTag().getDouble("DeflectAmount");
-		// Siempre agregar información relevante si el valor es mayor que 0
 		if (deflectAmount > 0) {
 			String attackerName = itemstack.getOrCreateTag().getString("AttackerName");
 			list.add(Component.literal("Deflect Amount: ").withStyle(style -> style.withColor(TextColor.fromRgb(0xFF5555))) // Color rojo para el título
@@ -119,16 +119,12 @@ public class BrokenSwordFragmentItem extends SwordItem implements IDyeableItem {
 
 	@Override
 	public InteractionResultHolder<ItemStack> use(Level level, Player entity, InteractionHand hand) {
-		// Verificar si estamos en el servidor (lado del servidor)
-		if (!level.isClientSide()) {
-			// Verificar la configuración solo del lado del servidor
-			if (JaamsArcheologyCommonConfiguration.BROKENSWORDBLOCK.get()) {
-				entity.startUsingItem(hand);
-				return new InteractionResultHolder<>(InteractionResult.CONSUME, entity.getItemInHand(hand));
-			}
+		ItemStack itemStack = entity.getItemInHand(hand);
+		if (!ModList.get().isLoaded("epicfight")) {
+			entity.startUsingItem(hand);
+			return new InteractionResultHolder<>(InteractionResult.CONSUME, entity.getItemInHand(hand));
 		}
-		// Retornar un valor por defecto si las condiciones no se cumplen
-		return new InteractionResultHolder<>(InteractionResult.PASS, entity.getItemInHand(hand));
+		return new InteractionResultHolder<>(InteractionResult.CONSUME, entity.getItemInHand(hand));
 	}
 
 	@Override
@@ -139,7 +135,6 @@ public class BrokenSwordFragmentItem extends SwordItem implements IDyeableItem {
 	@NotNull
 	@Override
 	public AABB getSweepHitBox(@NotNull ItemStack stack, @NotNull Player player, @NotNull Entity target) {
-		// Customize the sweep attack hitbox
-		return target.getBoundingBox().inflate(0.5D, 0.25D, 0.5D); // Increase the range of the sweep attack
+		return target.getBoundingBox().inflate(0.5D, 0.25D, 0.5D);
 	}
 }

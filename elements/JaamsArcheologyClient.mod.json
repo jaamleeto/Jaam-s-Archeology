@@ -170,6 +170,28 @@
             "stringlist": []
           }
         ]
+      },
+      {
+        "category": "Damage Indicator",
+        "entries": [
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 2,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 0.0,
+            "textDefault": "NUMERIC",
+            "comment": "Types: NUMERIC, PHRASE, BOTH",
+            "vardisplay": "Display Type",
+            "varname": "displaytype",
+            "enablecomment": true,
+            "stringlist": []
+          }
+        ]
       }
     ],
     "file": "jaams_archeology_client",

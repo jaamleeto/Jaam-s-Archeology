@@ -30,23 +30,18 @@ public class AmmoniteProjectileRenderer extends EntityRenderer<AmmoniteProjectil
 	@Override
 	public void render(AmmoniteProjectileEntity entity, float entityYaw, float partialTicks, PoseStack matrixStack, MultiBufferSource buffer, int packedLight) {
 		matrixStack.pushPose();
-		// Scale the entity
 		final float SCALE_FACTOR = JaamsArcheologyClientConfiguration.AMMONITESIZE.get().floatValue();
 		matrixStack.scale(SCALE_FACTOR, SCALE_FACTOR, SCALE_FACTOR);
-		// Apply rotations based on the entity's orientation
 		matrixStack.mulPose(Axis.YP.rotationDegrees(Mth.lerp(partialTicks, entity.yRotO, entity.getYRot()) - 0.0F));
 		if (!entity.hasImpacted()) {
-			float spinRotation = (float) entity.getSpinTicks() * 30.0F; // Adjust spinning speed as needed
+			float spinRotation = (float) entity.getSpinTicks() * 30.0F; 
 			matrixStack.mulPose(Axis.XP.rotationDegrees(spinRotation));
 		}
 		if (entity.hasImpacted()) {
 			matrixStack.mulPose(Axis.ZP.rotationDegrees(entity.getXRot() + 0));
 		}
-		// Adjust translation to position the spear correctly
 		matrixStack.translate(0.0F, -0.175F, 0.0F);
-		// Get the item renderer instance
 		ItemRenderer itemRenderer = Minecraft.getInstance().getItemRenderer();
-		// Render the spear item with appropriate transformation and overlay settings
 		itemRenderer.renderStatic(entity.ammoniteItem, ItemDisplayContext.GROUND, packedLight, OverlayTexture.NO_OVERLAY, matrixStack, buffer, entity.level(), entity.getId());
 		matrixStack.popPose();
 		super.render(entity, entityYaw, partialTicks, matrixStack, buffer, packedLight);

@@ -8,7 +8,9 @@ import net.minecraftforge.registries.RegistryObject;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.DeferredRegister;
 
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.BlockItem;
 
 import net.jaams.jaamsarcheology.item.TraitorIdolItem;
 import net.jaams.jaamsarcheology.item.SwordOfUndyingItem;
@@ -20,14 +22,15 @@ import net.jaams.jaamsarcheology.item.RottenIdolItem;
 import net.jaams.jaamsarcheology.item.PrimordialGoldItem;
 import net.jaams.jaamsarcheology.item.PrimordialGoldFragmentItem;
 import net.jaams.jaamsarcheology.item.PrimitiveSpearItem;
-import net.jaams.jaamsarcheology.item.PigmanIdolItem;
 import net.jaams.jaamsarcheology.item.PetrifiedAmmoniteItem;
 import net.jaams.jaamsarcheology.item.OssifiedAmmoniteItem;
 import net.jaams.jaamsarcheology.item.MusicDiscNamelessItem;
 import net.jaams.jaamsarcheology.item.MagnifyingGlassItem;
+import net.jaams.jaamsarcheology.item.GuardianIdolItem;
 import net.jaams.jaamsarcheology.item.ExplosiveIdolItem;
 import net.jaams.jaamsarcheology.item.DiscFragmentNamelessItem;
 import net.jaams.jaamsarcheology.item.BrokenSwordFragmentItem;
+import net.jaams.jaamsarcheology.item.ArthropodsIdolItem;
 import net.jaams.jaamsarcheology.item.ArcheoTrowelItem;
 import net.jaams.jaamsarcheology.item.ArcheoPickaxeItem;
 import net.jaams.jaamsarcheology.item.ArcheoHammerItem;
@@ -52,10 +55,16 @@ public class JaamsArcheologyModItems {
 	public static final RegistryObject<Item> DISC_FRAGMENT_NAMELESS = REGISTRY.register("disc_fragment_nameless", () -> new DiscFragmentNamelessItem());
 	public static final RegistryObject<Item> EXPLOSIVE_IDOL = REGISTRY.register("explosive_idol", () -> new ExplosiveIdolItem());
 	public static final RegistryObject<Item> STRANGE_IDOL = REGISTRY.register("strange_idol", () -> new StrangeIdolItem());
-	public static final RegistryObject<Item> PIGMAN_IDOL = REGISTRY.register("pigman_idol", () -> new PigmanIdolItem());
 	public static final RegistryObject<Item> SKELETAL_IDOL = REGISTRY.register("skeletal_idol", () -> new SkeletalIdolItem());
 	public static final RegistryObject<Item> ROTTEN_IDOL = REGISTRY.register("rotten_idol", () -> new RottenIdolItem());
 	public static final RegistryObject<Item> TRAITOR_IDOL = REGISTRY.register("traitor_idol", () -> new TraitorIdolItem());
+	public static final RegistryObject<Item> GUARDIAN_IDOL = REGISTRY.register("guardian_idol", () -> new GuardianIdolItem());
+	public static final RegistryObject<Item> ARTHROPODS_IDOL = REGISTRY.register("arthropods_idol", () -> new ArthropodsIdolItem());
+	public static final RegistryObject<Item> PRIMORDIAL_GOLD_BLOCK = block(JaamsArcheologyModBlocks.PRIMORDIAL_GOLD_BLOCK);
+
 	// Start of user code block custom items
 	// End of user code block custom items
+	private static RegistryObject<Item> block(RegistryObject<Block> block) {
+		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties()));
+	}
 }

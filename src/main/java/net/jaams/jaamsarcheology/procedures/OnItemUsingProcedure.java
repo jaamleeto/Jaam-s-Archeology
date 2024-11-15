@@ -25,9 +25,6 @@ public class OnItemUsingProcedure {
 	}
 
 	private static void execute(@Nullable Event event, ItemStack itemstack) {
-		if (itemstack.getItem() == JaamsArcheologyModItems.MAGNIFYING_GLASS.get()) {
-			itemstack.getOrCreateTag().putDouble("CustomModelData", 1);
-		}
 		if (itemstack.getItem() == JaamsArcheologyModItems.BROKEN_SWORD_FRAGMENT.get()) {
 			itemstack.getOrCreateTag().putDouble("CustomModelData", 1);
 		}

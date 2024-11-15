@@ -8,13 +8,10 @@ import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.network.chat.Component;
-
-import net.jaams.jaamsarcheology.procedures.ItemInInventoryTickProcedure;
 
 import java.util.List;
 
@@ -52,14 +49,5 @@ public class MagnifyingGlassItem extends Item {
 	@Override
 	public boolean shouldCauseReequipAnimation(ItemStack oldStack, ItemStack newStack, boolean slotChanged) {
 		return false;
-	}
-
-	@Override
-	public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
-		super.inventoryTick(itemstack, world, entity, slot, selected);
-		if (entity instanceof Player) {
-			Player player = (Player) entity;
-			ItemInInventoryTickProcedure.execute(itemstack, player);
-		}
 	}
 }

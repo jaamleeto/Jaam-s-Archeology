@@ -12,31 +12,31 @@
     "recipeShapeless": false,
     "recipeSlots": [
       {
-        "value": ""
+        "value": "CUSTOM:PrimordialGoldFragment"
       },
       {
         "value": "CUSTOM:PrimordialGoldFragment"
       },
       {
-        "value": ""
+        "value": "CUSTOM:PrimordialGoldFragment"
       },
       {
         "value": "CUSTOM:PrimordialGoldFragment"
       },
       {
-        "value": "Items.GOLD_INGOT"
+        "value": "CUSTOM:PrimordialGoldFragment"
       },
       {
         "value": "CUSTOM:PrimordialGoldFragment"
       },
       {
-        "value": ""
+        "value": "CUSTOM:PrimordialGoldFragment"
       },
       {
         "value": "CUSTOM:PrimordialGoldFragment"
       },
       {
-        "value": ""
+        "value": "CUSTOM:PrimordialGoldFragment"
       }
     ],
     "recipeReturnStack": {

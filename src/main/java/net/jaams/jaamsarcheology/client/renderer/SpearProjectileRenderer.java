@@ -30,13 +30,11 @@ public class SpearProjectileRenderer extends EntityRenderer<SpearProjectileEntit
 	@Override
 	public void render(SpearProjectileEntity entity, float entityYaw, float partialTicks, PoseStack matrixStack, MultiBufferSource buffer, int packedLight) {
 		matrixStack.pushPose();
-		// Scale the entity
 		final float SCALE_FACTOR = JaamsArcheologyClientConfiguration.PRIMITIVESPEARSIZE.get().floatValue();
 		matrixStack.scale(SCALE_FACTOR, SCALE_FACTOR, SCALE_FACTOR);
 		matrixStack.mulPose(Axis.YP.rotationDegrees(Mth.lerp(partialTicks, entity.yRotO, entity.getYRot()) - 180.0F));
 		matrixStack.mulPose(Axis.XP.rotationDegrees(Mth.lerp(partialTicks, entity.xRotO, entity.getXRot()) - 90));
 		matrixStack.translate(0.0F, -1.195F, 0.0F);
-		// Render the weapon item
 		ItemRenderer render = Minecraft.getInstance().getItemRenderer();
 		render.renderStatic(entity.weaponItem, ItemDisplayContext.THIRD_PERSON_RIGHT_HAND, packedLight, OverlayTexture.NO_OVERLAY, matrixStack, buffer, entity.level(), entity.getId());
 		matrixStack.popPose();

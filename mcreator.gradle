@@ -16,6 +16,17 @@ repositories {
        }
        
        dependencies {
+         implementation fg.deobf("curse.maven:damage-indicator-reborn-1059519:5512460")
+       }
+
+
+repositories {
+         maven {
+             url = 'https://cursemaven.com/'
+         }
+       }
+       
+       dependencies {
          implementation fg.deobf("curse.maven:catalogue-459701:4766090")
        }
 

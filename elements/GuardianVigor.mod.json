@@ -1,0 +1,22 @@
+{
+  "_fv": 66,
+  "_type": "potioneffect",
+  "definition": {
+    "effectName": "Guardian Vigor",
+    "icon": "guardian_vigor",
+    "color": {
+      "value": -26215,
+      "falpha": 0.0
+    },
+    "isInstant": false,
+    "mobEffectCategory": "NEUTRAL",
+    "renderStatusInInventory": true,
+    "renderStatusInHUD": true,
+    "onStarted": {
+      "name": "GuardianVigorEffectStartedapplied"
+    },
+    "onExpired": {
+      "name": "GuardianVigorEffectExpires"
+    }
+  }
+}

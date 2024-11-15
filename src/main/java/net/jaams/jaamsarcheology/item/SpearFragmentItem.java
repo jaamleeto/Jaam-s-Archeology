@@ -2,6 +2,7 @@
 package net.jaams.jaamsarcheology.item;
 
 import net.minecraft.world.level.Level;
+import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.Rarity;
@@ -22,7 +23,6 @@ import net.minecraft.network.chat.Component;
 
 import net.jaams.jaamsarcheology.init.JaamsArcheologyModSounds;
 import net.jaams.jaamsarcheology.entity.SpearFragmentProjectileEntity;
-import net.jaams.jaamsarcheology.configuration.JaamsArcheologyCommonConfiguration;
 
 import java.util.List;
 
@@ -30,6 +30,10 @@ import com.google.common.collect.Multimap;
 import com.google.common.collect.ImmutableMultimap;
 
 public class SpearFragmentItem extends Item {
+	private static final double BASE_DAMAGE = 2.0;
+	private static final int KNOCKBACK = 1;
+	private static final int MINIMUM_USE_DURATION = 5;
+
 	public SpearFragmentItem() {
 		super(new Item.Properties().stacksTo(16).rarity(Rarity.COMMON));
 	}
@@ -45,8 +49,7 @@ public class SpearFragmentItem extends Item {
 	}
 
 	@Override
-	public boolean canApplyAtEnchantingTable(ItemStack stack, net.minecraft.world.item.enchantment.Enchantment enchantment) {
-		// Disallow all enchantments
+	public boolean canApplyAtEnchantingTable(ItemStack stack, Enchantment enchantment) {
 		return false;
 	}
 
@@ -80,43 +83,32 @@ public class SpearFragmentItem extends Item {
 	@Override
 	public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
 		ItemStack itemStack = player.getItemInHand(hand);
-		if (!level.isClientSide()) {
-			if (JaamsArcheologyCommonConfiguration.THROWPRIMITIVESPEAR.get() == true) {
-				player.startUsingItem(hand);
-				return InteractionResultHolder.consume(itemStack);
-			} else {
-				return InteractionResultHolder.fail(itemStack);
-			}
-		}
-		return InteractionResultHolder.fail(itemStack);
+		player.startUsingItem(hand);
+		return InteractionResultHolder.consume(itemStack);
 	}
 
 	@Override
 	public void releaseUsing(ItemStack weaponItemStack, Level level, LivingEntity entity, int durationUsed) {
-		if (JaamsArcheologyCommonConfiguration.THROWSPEARFRAGMENT.get() == true) {
-			if (entity instanceof Player player) {
-				int remainingDuration = this.getUseDuration(weaponItemStack) - durationUsed;
-				if (remainingDuration >= 5) {
-					if (!level.isClientSide) {
-						weaponItemStack.hurtAndBreak(1, player, (brokenItemStack) -> {
-							brokenItemStack.broadcastBreakEvent(entity.getUsedItemHand());
-						});
-						SpearFragmentProjectileEntity thrownWeapon = new SpearFragmentProjectileEntity(level, player, weaponItemStack);
-						thrownWeapon.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 2.0F + (float) 0.0F * 0.5F, 1.0F);
-						thrownWeapon.setBaseDamage(2);
-						thrownWeapon.setKnockback(1);
-						thrownWeapon.weaponItem = weaponItemStack.copy();
-						if (player.getAbilities().instabuild) {
-							thrownWeapon.pickup = AbstractArrow.Pickup.CREATIVE_ONLY;
-						}
-						level.addFreshEntity(thrownWeapon);
-						level.playSound((Player) null, thrownWeapon, JaamsArcheologyModSounds.SPEAR_FRAGMENT_FIRED.get(), SoundSource.PLAYERS, 1.0F, 1.0F);
-						if (!player.getAbilities().instabuild) {
-							player.getInventory().removeItem(weaponItemStack.split(1));
-						}
-						player.awardStat(Stats.ITEM_USED.get(this));
-					}
+		if (!(entity instanceof Player player))
+			return;
+		int remainingDuration = this.getUseDuration(weaponItemStack) - durationUsed;
+		if (remainingDuration >= MINIMUM_USE_DURATION) {
+			if (!level.isClientSide) {
+				weaponItemStack.hurtAndBreak(1, player, (p) -> p.broadcastBreakEvent(entity.getUsedItemHand()));
+				SpearFragmentProjectileEntity thrownWeapon = new SpearFragmentProjectileEntity(level, player, weaponItemStack);
+				thrownWeapon.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 2.0F, 1.0F);
+				thrownWeapon.setBaseDamage(BASE_DAMAGE);
+				thrownWeapon.setKnockback(KNOCKBACK);
+				thrownWeapon.weaponItem = weaponItemStack.copy();
+				if (player.getAbilities().instabuild) {
+					thrownWeapon.pickup = AbstractArrow.Pickup.CREATIVE_ONLY;
 				}
+				level.addFreshEntity(thrownWeapon);
+				level.playSound(null, thrownWeapon, JaamsArcheologyModSounds.SPEAR_FRAGMENT_FIRED.get(), SoundSource.PLAYERS, 1.0F, 1.0F);
+				if (!player.getAbilities().instabuild) {
+					player.getInventory().removeItem(weaponItemStack.split(1));
+				}
+				player.awardStat(Stats.ITEM_USED.get(this));
 			}
 		}
 	}

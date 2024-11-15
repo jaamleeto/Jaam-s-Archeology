@@ -21,7 +21,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.BlockPos;
-import net.minecraft.client.Minecraft;
 
 import net.jaams.jaamsarcheology.network.JaamsArcheologyModVariables;
 import net.jaams.jaamsarcheology.configuration.JaamsArcheologyCommonConfiguration;
@@ -34,9 +33,14 @@ public class SwordOfUndyingRightclickedProcedure {
 		if (entity == null || !JaamsArcheologyCommonConfiguration.SWORDOFUNDYING.get())
 			return;
 		if (entity.isShiftKeyDown()) {
-			if (world.isClientSide()) {
-				Minecraft.getInstance().gameRenderer.displayItemActivation(itemstack);
-			} else if (entity instanceof Player player) {
+			{
+				boolean _setval = true;
+				entity.getCapability(JaamsArcheologyModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.SOUTotem = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
+			if (entity instanceof Player player) {
 				player.getCooldowns().addCooldown(itemstack.getItem(), 300);
 				applyEffects((LivingEntity) entity);
 				playTotemSound(world, x, y, z);
@@ -47,24 +51,21 @@ public class SwordOfUndyingRightclickedProcedure {
 	}
 
 	private static void applyEffects(LivingEntity entity) {
-		ServerLevel level = (ServerLevel) entity.level();
-		Vec3 position = entity.position().add(0, 1, 0);
-		level.sendParticles(ParticleTypes.TOTEM_OF_UNDYING, position.x(), position.y(), position.z(), 100, 0.2, 0.2, 0.2, 0.5);
-		// Efectos principales
-		entity.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 100, 0));
-		entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 100, 3));
-		entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 60, 4));
-		// Aplicar resistencia al fuego si el jugador está en llamas
-		if (entity.getRemainingFireTicks() > 0) {
-			entity.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 100, 0));
-		}
-		// Lógica más robusta para la caída
-		if (entity.fallDistance > 3.0F || (entity.fallDistance > 0.5F && entity.fallDistance > entity.getMaxFallDistance())) {
-			entity.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 100, 0));
-		}
-		// Aplicar respiración bajo el agua si el jugador está bajo el agua
-		if (entity.isInWaterOrBubble()) {
-			entity.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 100, 0));
+		if (entity.level() instanceof ServerLevel level) {
+			Vec3 position = entity.position().add(0, 1, 0);
+			level.sendParticles(ParticleTypes.TOTEM_OF_UNDYING, position.x(), position.y(), position.z(), 100, 0.2, 0.2, 0.2, 0.5);
+			entity.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 100, 0));
+			entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 100, 3));
+			entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 60, 4));
+			if (entity.getRemainingFireTicks() > 0) {
+				entity.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 100, 0));
+			}
+			if (entity.fallDistance > 3.0F || (entity.fallDistance > 0.5F && entity.fallDistance > entity.getMaxFallDistance())) {
+				entity.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 100, 0));
+			}
+			if (entity.isInWaterOrBubble()) {
+				entity.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 100, 0));
+			}
 		}
 	}
 
@@ -78,14 +79,21 @@ public class SwordOfUndyingRightclickedProcedure {
 	private static void damageNearbyEntities(LevelAccessor world, Entity entity, double x, double y, double z, ItemStack itemstack) {
 		Vec3 center = new Vec3(x, y, z);
 		List<Entity> nearbyEntities = world.getEntitiesOfClass(Entity.class, new AABB(center, center).inflate(4)).stream().filter(e -> e != entity && (e instanceof LivingEntity || e instanceof Player))
-				.filter(e -> !(e instanceof TamableAnimal tam && tam.isOwnedBy((LivingEntity) entity))).toList();
-		// Calcula el daño como 1% de la durabilidad del arma
+				.filter(e -> !(e instanceof TamableAnimal tam && tam.isOwnedBy((LivingEntity) entity))) // No dañar entidades tameadas
+				.filter(e -> !isAlly(entity, e)).toList();
 		int maxDurability = itemstack.getMaxDamage();
 		int currentDurability = itemstack.getDamageValue();
 		float damage = (maxDurability - currentDurability) * 0.01f;
 		for (Entity target : nearbyEntities) {
 			target.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.PLAYER_ATTACK), entity), damage);
 		}
+	}
+
+	private static boolean isAlly(Entity sourceEntity, Entity targetEntity) {
+		if (sourceEntity instanceof LivingEntity livingSource && targetEntity instanceof LivingEntity livingTarget) {
+			return livingSource.isAlliedTo(livingTarget);
+		}
+		return false;
 	}
 
 	private static void shakeEntity(Entity entity) {

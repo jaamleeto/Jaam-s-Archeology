@@ -86,6 +86,9 @@ public class ExplosiveIdolRightclickedProcedure {
 			if (JaamsArcheologyCommonConfiguration.EXPLOSIVEVIGOR.get() == true && !world.isClientSide()) {
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 					_entity.addEffect(new MobEffectInstance(JaamsArcheologyModMobEffects.EXPLOSIVE_VIGOR.get(), 800, 0));
+			} else {
+				if (world instanceof Level _level && !_level.isClientSide())
+					_level.explode(null, x, y, z, 3, Level.ExplosionInteraction.MOB);
 			}
 			if (!world.isClientSide()) {
 				if (world instanceof Level _level) {

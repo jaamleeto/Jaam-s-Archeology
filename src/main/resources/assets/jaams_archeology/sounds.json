@@ -149,22 +149,6 @@
       }
     ]
   },
-  "pigman_idol_started": {
-    "sounds": [
-      {
-        "name": "jaams_archeology:pigman_idol_started",
-        "stream": false
-      }
-    ]
-  },
-  "pigman_idol_ends": {
-    "sounds": [
-      {
-        "name": "jaams_archeology:pigman_idol_ends",
-        "stream": false
-      }
-    ]
-  },
   "rotten_idol_started": {
     "sounds": [
       {
@@ -225,6 +209,38 @@
     "sounds": [
       {
         "name": "jaams_archeology:traitor_idol_ends",
+        "stream": false
+      }
+    ]
+  },
+  "guardian_idol_started": {
+    "sounds": [
+      {
+        "name": "jaams_archeology:guardian_idol_started",
+        "stream": false
+      }
+    ]
+  },
+  "guardian_idol_expires": {
+    "sounds": [
+      {
+        "name": "jaams_archeology:guardian_idol_expires",
+        "stream": false
+      }
+    ]
+  },
+  "arthropods_idol_started": {
+    "sounds": [
+      {
+        "name": "jaams_archeology:arthropods_idol_started",
+        "stream": false
+      }
+    ]
+  },
+  "arthropods_idol_expires": {
+    "sounds": [
+      {
+        "name": "jaams_archeology:arthropods_idol_expires",
         "stream": false
       }
     ]

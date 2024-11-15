@@ -10,6 +10,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.server.level.ServerPlayer;
@@ -85,6 +86,9 @@ public class SkeletalIdolRightclickedProcedure {
 			if (JaamsArcheologyCommonConfiguration.SKELETALVIGOR.get() == true && !world.isClientSide()) {
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 					_entity.addEffect(new MobEffectInstance(JaamsArcheologyModMobEffects.SKELETAL_VIGOR.get(), 800, 0));
+			} else {
+				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+					_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 800, 1));
 			}
 			if (!world.isClientSide()) {
 				if (world instanceof Level _level) {

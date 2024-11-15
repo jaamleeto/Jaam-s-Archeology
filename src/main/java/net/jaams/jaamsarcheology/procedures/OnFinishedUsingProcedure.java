@@ -30,9 +30,6 @@ public class OnFinishedUsingProcedure {
 	private static void execute(@Nullable Event event, Entity entity, ItemStack itemstack) {
 		if (entity == null)
 			return;
-		if (itemstack.getItem() == JaamsArcheologyModItems.MAGNIFYING_GLASS.get()) {
-			itemstack.getOrCreateTag().putDouble("CustomModelData", 0);
-		}
 		if (itemstack.getItem() == JaamsArcheologyModItems.BROKEN_SWORD_FRAGMENT.get()) {
 			itemstack.getOrCreateTag().putDouble("CustomModelData", 0);
 			if (!ModList.get().isLoaded("epicfight")) {
