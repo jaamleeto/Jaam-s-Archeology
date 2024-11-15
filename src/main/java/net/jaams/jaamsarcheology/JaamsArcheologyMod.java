@@ -8,19 +8,15 @@ import net.minecraftforge.network.NetworkRegistry;
 import net.minecraftforge.network.NetworkEvent;
 import net.minecraftforge.fml.util.thread.SidedThreadGroups;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.common.MinecraftForge;
 
-import net.minecraft.world.level.block.DispenserBlock;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.FriendlyByteBuf;
 
-import net.jaams.jaamsarcheology.procedures.SpearFragmentDispenseBehaviorProcedure;
-import net.jaams.jaamsarcheology.procedures.AmmoniteDispenseBehaviorProcedure;
 import net.jaams.jaamsarcheology.init.JaamsArcheologyModTabs;
 import net.jaams.jaamsarcheology.init.JaamsArcheologyModSounds;
 import net.jaams.jaamsarcheology.init.JaamsArcheologyModMobEffects;
@@ -49,24 +45,19 @@ public class JaamsArcheologyMod {
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 		JaamsArcheologyModSounds.REGISTRY.register(bus);
 		JaamsArcheologyModBlocks.REGISTRY.register(bus);
+
 		JaamsArcheologyModItems.REGISTRY.register(bus);
 		JaamsArcheologyModEntities.REGISTRY.register(bus);
+
 		JaamsArcheologyModTabs.REGISTRY.register(bus);
+
 		JaamsArcheologyModMobEffects.REGISTRY.register(bus);
+
 		// Start of user code block mod init
-		// Common Setup
-		bus.addListener(this::commonSetup);
 		// End of user code block mod init
 	}
 
 	// Start of user code block mod methods
-	private void commonSetup(final FMLCommonSetupEvent event) {
-		DispenserBlock.registerBehavior(JaamsArcheologyModItems.SPEAR_FRAGMENT.get(), new SpearFragmentDispenseBehaviorProcedure());
-		DispenserBlock.registerBehavior(JaamsArcheologyModItems.OSSIFIED_AMMONITE.get(), new AmmoniteDispenseBehaviorProcedure());
-		DispenserBlock.registerBehavior(JaamsArcheologyModItems.SHINY_AMMONITE.get(), new AmmoniteDispenseBehaviorProcedure());
-		DispenserBlock.registerBehavior(JaamsArcheologyModItems.PETRIFIED_AMMONITE.get(), new AmmoniteDispenseBehaviorProcedure());
-	}
-
 	// End of user code block mod methods
 	private static final String PROTOCOL_VERSION = "1";
 	public static final SimpleChannel PACKET_HANDLER = NetworkRegistry.newSimpleChannel(new ResourceLocation(MODID, MODID), () -> PROTOCOL_VERSION, PROTOCOL_VERSION::equals, PROTOCOL_VERSION::equals);
